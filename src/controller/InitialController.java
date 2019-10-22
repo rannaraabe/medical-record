@@ -1,13 +1,20 @@
 package controller;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import view.Main;
 
-public class InitialController {
+public class InitialController implements Initializable {
 	@FXML
 	private Label lbInstrucoes;
 	@FXML
@@ -16,9 +23,9 @@ public class InitialController {
 	private Button btIniciar;
 	@FXML
 	private Label lbWelcome;
-	
-	private Application mainApp;
-	
+
+	private Main mainApp;
+
 	public Label getLbInstrucoes() {
 		return lbInstrucoes;
 	}
@@ -55,13 +62,19 @@ public class InitialController {
 		return mainApp;
 	}
 
-	public void setMainApp(Application mainApp) {
+	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
 	}
-
+	
 	@FXML
-	protected void btIniciar(ActionEvent event) {
-		// direcionar para a proxima tela
+	protected void btIniciar(ActionEvent event) throws IOException {
+		mainApp.telaProntuarios();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		imgDoctor.setImage(new Image(Main.class.getResourceAsStream("../../img/doctor.png")));
 	}
 
 }

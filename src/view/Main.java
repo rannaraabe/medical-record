@@ -7,11 +7,12 @@ import controller.ProntuariosController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	private Stage primaryStage;	
+	private Stage primaryStage;
 	public AnchorPane rootLayout;
 
 	@Override
@@ -25,12 +26,12 @@ public class Main extends Application {
 		FXMLLoader fxmlInicial = new FXMLLoader();
 		fxmlInicial.setLocation(getClass().getResource("Initial.fxml"));
 		AnchorPane screenInitial = (AnchorPane) fxmlInicial.load();
-
+			      
 		Scene scene = new Scene(screenInitial);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		InitialController controller = new InitialController();
+		InitialController controller = fxmlInicial.getController();
 		controller.setMainApp(this);
 	}
 
@@ -39,18 +40,11 @@ public class Main extends Application {
 		fxmlProntuarios.setLocation(getClass().getResource("Prontuarios.fxml"));
 		AnchorPane screenProntuarios = (AnchorPane) fxmlProntuarios.load();
 
-		rootLayout.setCenter(screenProntuarios);
-		ProntuariosController controller = new ProntuariosController();
-		controller.setMainApp(this);
-	}
-	
-	public void telaAlgoritmos() throws IOException {
-		FXMLLoader fxmlAlgoritmos = new FXMLLoader();
-		fxmlAlgoritmos.setLocation(getClass().getResource("Algoritmos.fxml"));
-		AnchorPane screenAlgoritmos = (AnchorPane) fxmlAlgoritmos.load();
+		Scene scene = new Scene(screenProntuarios);
+		primaryStage.setScene(scene);
+		primaryStage.show();
 
-		rootLayout.setCenter(screenAlgoritmos);
-		ProntuariosController controller = new ProntuariosController();
+		ProntuariosController controller = fxmlProntuarios.getController();
 		controller.setMainApp(this);
 	}
 
