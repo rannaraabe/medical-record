@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -28,14 +27,6 @@ public class ResultadosController {
     
     private Main mainApp;
 
-	public Main getMainApp() {
-		return mainApp;
-	}
-
-	public void setMainApp(Main mainApp) {
-		this.mainApp = mainApp;
-	}
-	
 	public TextArea getTaResultado() {
 		return taResultado;
 	}
@@ -76,6 +67,14 @@ public class ResultadosController {
 		this.btImportar = btImportar;
 	}
 
+	public Main getMainApp() {
+		return mainApp;
+	}
+
+	public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+	}
+	
 	/////////////////////// Métodos ////////////////////////
     @FXML
     protected void gerarResultados(ActionEvent event) {

@@ -13,34 +13,34 @@
             <Font name="Century Gothic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btResultado" layoutX="539.0" layoutY="21.0" mnemonicParsing="false" onAction="#gerarResultado" text="Gerar resultados">
+      <Button fx:id="btResultado" layoutX="293.0" layoutY="301.0" mnemonicParsing="false" onAction="#gerarResultado" text="Gerar resultados">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="lbSelecionarAlgoritmos" layoutX="21.0" layoutY="24.0" text="Selecionar algoritmos:">
+      <Label fx:id="lbSelecionarAlgoritmos" layoutX="281.0" layoutY="122.0" text="Selecionar algoritmos:">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font>
       </Label>
-      <CheckBox fx:id="cbCosine" layoutX="21.0" layoutY="59.0" mnemonicParsing="false" onAction="#selecionarCosine" text="Cosine">
+      <CheckBox fx:id="cbCosine" layoutX="281.0" layoutY="157.0" mnemonicParsing="false" onAction="#selecionarCosine" text="Cosine">
          <font>
-            <Font size="13.0" />
+            <Font name="Century Gothic" size="13.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="cbTrigram" layoutX="21.0" layoutY="83.0" mnemonicParsing="false" onAction="#selecionarTrigram" text="Trigram">
+      <CheckBox fx:id="cbTrigram" layoutX="281.0" layoutY="186.0" mnemonicParsing="false" onAction="#selecionarTrigram" text="Trigram">
          <font>
-            <Font size="13.0" />
+            <Font name="Century Gothic" size="13.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="cbLevenshtein" layoutX="21.0" layoutY="108.0" mnemonicParsing="false" onAction="#selecionarLevenshtein" text="Levenshtein">
+      <CheckBox fx:id="cbLevenshtein" layoutX="281.0" layoutY="216.0" mnemonicParsing="false" onAction="#selecionarLevenshtein" text="Levenshtein">
          <font>
-            <Font size="13.0" />
+            <Font name="Century Gothic" size="13.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="cbJaroWinkler" layoutX="21.0" layoutY="131.0" mnemonicParsing="false" onAction="#selecionarJaroWinkler" text="JaroWinkler">
+      <CheckBox fx:id="cbJaroWinkler" layoutX="281.0" layoutY="245.0" mnemonicParsing="false" onAction="#selecionarJaroWinkler" text="JaroWinkler">
          <font>
-            <Font size="13.0" />
+            <Font name="Century Gothic" size="13.0" />
          </font>
       </CheckBox>
    </children>
