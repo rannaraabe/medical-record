@@ -7,31 +7,35 @@ import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import view.Main;
 
-public class InitialController implements Initializable {
+public class InitialController {
 	@FXML
-	private Label lbInstrucoes;
+	private ImageView imgElements;
+
 	@FXML
 	private ImageView imgDoctor;
+
 	@FXML
 	private Button btIniciar;
+
 	@FXML
-	private Label lbWelcome;
+	private Button btAjuda;
+
+	@FXML
+	private Button btSobre;
 
 	private Main mainApp;
 
-	public Label getLbInstrucoes() {
-		return lbInstrucoes;
+	public ImageView getImgElements() {
+		return imgElements;
 	}
 
-	public void setLbInstrucoes(Label lbInstrucoes) {
-		this.lbInstrucoes = lbInstrucoes;
+	public void setImgElements(ImageView imgElements) {
+		this.imgElements = imgElements;
 	}
 
 	public ImageView getImgDoctor() {
@@ -50,12 +54,20 @@ public class InitialController implements Initializable {
 		this.btIniciar = btIniciar;
 	}
 
-	public Label getLbWelcome() {
-		return lbWelcome;
+	public Button getBtAjuda() {
+		return btAjuda;
 	}
 
-	public void setLbWelcome(Label lbWelcome) {
-		this.lbWelcome = lbWelcome;
+	public void setBtAjuda(Button btAjuda) {
+		this.btAjuda = btAjuda;
+	}
+
+	public Button getBtSobre() {
+		return btSobre;
+	}
+
+	public void setBtSobre(Button btSobre) {
+		this.btSobre = btSobre;
 	}
 
 	public Application getMainApp() {
@@ -66,15 +78,19 @@ public class InitialController implements Initializable {
 		this.mainApp = mainApp;
 	}
 	
+	/////////////////////// Métodos ////////////////////////
 	@FXML
-	protected void btIniciar(ActionEvent event) throws IOException {
+	protected void selecionarAjuda(ActionEvent event) {
+		// TODO open dialog com instruçoes de uso
+	}
+
+	@FXML
+	protected void selecionarIniciar(ActionEvent event) throws IOException {
 		mainApp.telaProntuarios();
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		imgDoctor.setImage(new Image(Main.class.getResourceAsStream("../../img/doctor.png")));
+	@FXML
+	protected void selecionarSobre(ActionEvent event) {
+		// TODO open dialog com resumo doq eh o projeto e criadora
 	}
-
 }

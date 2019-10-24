@@ -5,26 +5,42 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="715.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="687.0" layoutX="14.0" layoutY="14.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="941.0" />
-      <Label fx:id="lbInstrucoes" layoutX="279.0" layoutY="304.0" prefHeight="260.0" prefWidth="413.0" text="                          MT-MR integra IA com Medicina!&#10;Para gerar um pré-diagnóstico através um prontuário, basta seguir as&#10;instruções abaixo:&#10;&#10;&gt;Clique no botão 'Iniciar' para ser redirecionado à tela e processar as&#10;informações necessárias; &#10;&gt; Clique no botão 'Selecionar arquivos' para escolher o(s) arquivo(s)&#10;do(s) prontuário(s) em PDF;&#10;&gt;Selecione os algoritmos desejados para processar o(s) arquivo(s);&#10;&gt;Clique no botão 'Resultado' para processar o(s) arquivo(s);&#10;&gt;Selecione 'Importar resultado' para importar o arquivo de&#10;pré-diagnóstico.">
+      <ImageView fx:id="imgElements" fitHeight="551.0" fitWidth="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/vector.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="316.0" layoutY="271.0" text="MT - MEDICINAL RECORD" textFill="#ee725c">
          <font>
-            <Font size="13.0" />
-         </font></Label>
-      <ImageView fx:id="imgDoctor" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+            <Font name="Century Gothic" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgDoctor" fitHeight="170.0" fitWidth="202.0" layoutX="371.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../img/doctor.png" />
          </image>
       </ImageView>
-      <Button fx:id="btIniciar" layoutX="461.0" layoutY="574.0" mnemonicParsing="false" onAction="#btIniciar" text="Iniciar" />
-      <Label fx:id="lbWelcome" layoutX="406.0" layoutY="283.0" text="Welcome to MT-MR!&#10;" textFill="#82c3b8">
+      <Button fx:id="btIniciar" layoutX="369.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarIniciar" text="Iniciar">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
+      <Button fx:id="btAjuda" layoutX="491.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarAjuda" text="Ajuda">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
+      <Label layoutX="327.0" layoutY="301.0" text="A plataforma que integra Medicina e IA!" textFill="#133a5b">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
          </font>
       </Label>
+      <Button fx:id="btSobre" layoutX="431.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarSobre" text="Sobre">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

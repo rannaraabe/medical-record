@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlgoritmosController">
+   <children>
+      <Button fx:id="btVoltar" layoutX="658.0" layoutY="21.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btResultado" layoutX="539.0" layoutY="21.0" mnemonicParsing="false" onAction="#gerarResultado" text="Gerar resultados">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbSelecionarAlgoritmos" layoutX="21.0" layoutY="24.0" text="Selecionar algoritmos:">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="cbCosine" layoutX="21.0" layoutY="59.0" mnemonicParsing="false" onAction="#selecionarCosine" text="Cosine">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cbTrigram" layoutX="21.0" layoutY="83.0" mnemonicParsing="false" onAction="#selecionarTrigram" text="Trigram">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cbLevenshtein" layoutX="21.0" layoutY="108.0" mnemonicParsing="false" onAction="#selecionarLevenshtein" text="Levenshtein">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cbJaroWinkler" layoutX="21.0" layoutY="131.0" mnemonicParsing="false" onAction="#selecionarJaroWinkler" text="JaroWinkler">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
