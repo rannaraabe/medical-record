@@ -6,8 +6,10 @@ import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import view.Main;
 
@@ -68,12 +70,25 @@ public class ProntuariosController {
 
 	/////////////////////// Métodos ////////////////////////	
 	@FXML
-	protected void selecionarProntuarios(ActionEvent event) {
+	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException {
 		FileChooser chooser = new FileChooser();
 		chooser.setTitle("Selecionar arquivo");
-
-		taResultado.clear();
-        List<File> files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
+		List<File> files;
+		do {
+			files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
+			
+			if(files.size() == 1) {
+	        	taResultado.clear();
+	        	
+	        	Alert dialog = new Alert(AlertType.ERROR);
+	    		dialog.setTitle("Error");
+	    		dialog.setHeaderText(null);
+	    		dialog.setContentText("É necessário selecionar no mínimo dois arquivos.");
+	    		dialog.show();
+	    		dialog.wait();
+	        }
+		} while(files.size() == 1);
+                	
         printProntuarios(taResultado, files);
 	}
 	
