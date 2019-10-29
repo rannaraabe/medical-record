@@ -1,6 +1,7 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,8 +19,9 @@ public class DataSet {
 	 * Read the archive of the texts
 	 * 
 	 * @param path
+	 * @throws IOException 
 	 */
-	public String reader(String path) {
+	public String reader(String path) throws IOException {		
 		BufferedReader br = null;
 		String linha = "", text = "";
 		
@@ -30,21 +32,30 @@ public class DataSet {
 		// Reading the text
 		try {
 			br = new BufferedReader(new FileReader(path));
-
+			int cont = 0;
 			while ((linha = br.readLine()) != null) {
 				String[] dataset = linha.split("\n");
 				String noticia = dataset[dataset.length - 1];
+				cont++;
 				
-				// Mining the text
-				text = tm.setMethodsMining(noticia);
-				
-				// Adding the text mining in list
-				if(!text.equals("") &&
-						!text.equals(" ") &&
-						!text.equals("\n"))
-					list.add(text);
-				
-				//System.out.println(text + "\n");
+				// Salvo a partir da 12a linha até encontrar a String "Atendimento"
+				if(cont > 13 ) {
+					if(noticia.contains("Atendimento: "))
+						break;
+					
+					System.out.println(noticia);
+					
+					// Mining the text
+					text = tm.setMethodsMining(noticia);
+					
+					// Adding the text mining in list
+					if(!text.equals("") &&
+							!text.equals(" ") &&
+							!text.equals("\n"))
+						list.add(text);
+					
+//					System.out.println(text + "\n");
+				}
 			}
 
 		} catch (FileNotFoundException e) {

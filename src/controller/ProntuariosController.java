@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,9 +71,19 @@ public class ProntuariosController {
 	protected void selecionarProntuarios(ActionEvent event) {
 		FileChooser chooser = new FileChooser();
 		chooser.setTitle("Selecionar arquivo");
-		File file = chooser.showOpenDialog(btProntuarios.getScene().getWindow());
-		taResultado.setText(file.toString());
+
+		taResultado.clear();
+        List<File> files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
+        printProntuarios(taResultado, files);
 	}
+	
+	private void printProntuarios(TextArea textArea, List<File> files) {
+        if (files == null || files.isEmpty()) 
+            return;
+        
+        for (File file : files) 
+            textArea.appendText(file.getAbsoluteFile() + "\n===================================================\n");
+    }
 
 	@FXML
 	protected void selecionarMetricas(ActionEvent event) throws IOException {

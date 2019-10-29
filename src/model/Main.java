@@ -1,7 +1,9 @@
 package model;
 
+import java.io.IOException;
+
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		Cosine cosine = new Cosine();
 		Trigram trigram = new Trigram();
@@ -29,17 +31,35 @@ public class Main {
 		}*/
 		
 		DataSet data = new DataSet();
-		String result = data.reader(".\\dataset\\output\\pdf1.txt");
-		String result2 = data.reader(".\\dataset\\output\\pdf7.txt");
+		System.out.println("=====================1===================");
+		String t1 = data.reader(".\\dataset\\output\\pdf1.txt");
+		System.out.println(t1);
 		
-		System.out.println(result);
-		System.out.println(result2);
+		System.out.println("====================2====================");
+		String t2 = data.reader(".\\dataset\\output\\pdf2.txt");
+		System.out.println(t2);
+		
+		System.out.println("====================3====================");
+		String t3 = data.reader(".\\dataset\\output\\pdf3.txt");
+		System.out.println(t3);
+		
+		System.out.println("====================4====================");
+		String t4 = data.reader(".\\dataset\\output\\pdf4.txt");
+		System.out.println(t4);
+		
+		System.out.println("====================5====================");
+		String t5 = data.reader(".\\dataset\\output\\pdf5.txt");
+		System.out.println(t5);
+		
+		
+//		System.out.println(result);
+//		System.out.println(result2);
 
 		
-		System.out.println("Cosine: " + cosine.similarity(result, result2));
-		System.out.println("Trigram: " + trigram.similarity(result, result2));
-		System.out.println("JaroWinkler: " + jaro.similarity(result, result2));
-		System.out.println("Levenshtein: " + levenshtein.similarity(result, result2));
+//		System.out.println("Cosine: " + cosine.similarity(result, result2));
+//		System.out.println("Trigram: " + trigram.similarity(result, result2));
+//		System.out.println("JaroWinkler: " + jaro.similarity(result, result2));
+//		System.out.println("Levenshtein: " + levenshtein.similarity(result, result2));
 			
 	}
 

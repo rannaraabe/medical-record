@@ -2,12 +2,13 @@ package view;
 
 import java.io.IOException;
 
+import controller.AlgoritmosController;
 import controller.InitialController;
 import controller.ProntuariosController;
+import controller.ResultadosController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -19,6 +20,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("MT-MR");
+	    
 		telaInicial();
 	}
 
@@ -26,12 +28,12 @@ public class Main extends Application {
 		FXMLLoader fxmlInicial = new FXMLLoader();
 		fxmlInicial.setLocation(getClass().getResource("Initial.fxml"));
 		AnchorPane screenInitial = (AnchorPane) fxmlInicial.load();
-	
-		Scene scene = new Scene(screenInitial);
+		
+		Scene scene = new Scene(screenInitial);		
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
-		InitialController controller = fxmlInicial.getController();
+		
+		InitialController controller = fxmlInicial.getController();		
 		controller.setMainApp(this);
 	}
 
@@ -57,7 +59,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		ProntuariosController controller = fxmlAlgoritmos.getController();
+		AlgoritmosController controller = fxmlAlgoritmos.getController();
 		controller.setMainApp(this);
 	}
 	
@@ -70,7 +72,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		ProntuariosController controller = fxmlResultados.getController();
+		ResultadosController controller = fxmlResultados.getController();
 		controller.setMainApp(this);
 	}
 

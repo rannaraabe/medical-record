@@ -7,33 +7,56 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import model.Cosine;
+import model.JaroWinkler;
+import model.Levenshtein;
+import model.Trigram;
 import view.Main;
 
 public class AlgoritmosController {
 	@FXML
-    private Button btVoltar;
+	private Button btVoltar;
 
-    @FXML
-    private Button btResultado;
+	@FXML
+	private Button btResultado;
 
-    @FXML
-    private Label lbSelecionarAlgoritmos;
+	@FXML
+	private Label lbSelecionarAlgoritmos;
 
-    @FXML
-    private CheckBox cbCosine;
+	@FXML
+	private CheckBox cbCosine;
 
-    @FXML
-    private CheckBox cbTrigram;
+	@FXML
+	private CheckBox cbTrigram;
 
-    @FXML
-    private CheckBox cbLevenshtein;
+	@FXML
+	private CheckBox cbLevenshtein;
 
-    @FXML
-    private CheckBox cbJaroWinkler;
+	@FXML
+	private CheckBox cbJaroWinkler;
 
-    private Main mainApp;
-    
-    public Button getBtVoltar() {
+	@FXML
+	private TextArea taResultados;
+
+	@FXML
+	private Label lbMostrarDados;
+	
+	@FXML
+	private CheckBox cdDadosPaciente;
+
+	@FXML
+	private CheckBox cdDadosAtendimento;
+
+	@FXML
+	private CheckBox cbAnamnese;
+
+	@FXML
+	private CheckBox cbNotasAdicionais;
+
+	private Main mainApp;
+
+	public Button getBtVoltar() {
 		return btVoltar;
 	}
 
@@ -96,36 +119,40 @@ public class AlgoritmosController {
 	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
 	}
-	
+
 	/////////////////////// Métodos ////////////////////////
 	@FXML
-    protected void gerarResultado(ActionEvent event) throws IOException {
-		// TODO conferir as caixas selecionadas 
+	protected void gerarResultado(ActionEvent event) throws IOException {
+		// TODO passar os dados
+		if (cbCosine.isSelected()) {
+			Cosine cosine = new Cosine();
+			cosine.similarity("", "");
+			System.out.println("cosine selecionado");
+		}
+
+		if (cbJaroWinkler.isSelected()) {
+			JaroWinkler jaro = new JaroWinkler();
+			jaro.similarity("", "");
+			System.out.println("jaro selecionado");
+		}
+
+		if (cbLevenshtein.isSelected()) {
+			Levenshtein levenshtein = new Levenshtein();
+			levenshtein.similarity("", "");
+			System.out.println("levenshtein selecionado");
+		}
+
+		if (cbTrigram.isSelected()) {
+			Trigram trigram = new Trigram();
+			trigram.similarity("", "");
+			System.out.println("trigram selecionado");
+		}
+
 		mainApp.telaResultados();
-    }
+	}
 
-    @FXML
-    protected void selecionarCosine(ActionEvent event) {
-    	cbCosine.setSelected(true);
-    }
-
-    @FXML
-    protected void selecionarJaroWinkler(ActionEvent event) {
-    	cbJaroWinkler.setSelected(true);
-    }
-
-    @FXML
-    protected void selecionarLevenshtein(ActionEvent event) {
-    	cbLevenshtein.setSelected(true);
-    }
-
-    @FXML
-    protected void selecionarTrigram(ActionEvent event) {
-    	cbTrigram.setSelected(true);
-    }
-
-    @FXML
-    protected void voltarTela(ActionEvent event) throws IOException {
-    	mainApp.telaProntuarios();
-    }
+	@FXML
+	protected void voltarTela(ActionEvent event) throws IOException {
+		mainApp.telaProntuarios();
+	}
 }
