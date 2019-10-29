@@ -50,16 +50,19 @@ public class Main {
 		System.out.println("====================5====================");
 		String t5 = data.reader(".\\dataset\\output\\pdf5.txt");
 		System.out.println(t5);
+						
+		System.out.println("Cosine t1, t2: " + cosine.similarity(t1, t2));
+		System.out.println("Cosine t1, t3: " + cosine.similarity(t1, t3));
+		System.out.println("Cosine t1, t4: " + cosine.similarity(t1, t4));
+		System.out.println("Cosine t1, t5: " + cosine.similarity(t1, t5));
 		
+		System.out.println("Trigram: " + trigram.similarity(t1, t2));
+		System.out.println("Trigram: " + trigram.similarity(t1, t3));
+		System.out.println("Trigram: " + trigram.similarity(t1, t4));
+		System.out.println("Trigram: " + trigram.similarity(t1, t5));
 		
-//		System.out.println(result);
-//		System.out.println(result2);
-
-		
-//		System.out.println("Cosine: " + cosine.similarity(result, result2));
-//		System.out.println("Trigram: " + trigram.similarity(result, result2));
-//		System.out.println("JaroWinkler: " + jaro.similarity(result, result2));
-//		System.out.println("Levenshtein: " + levenshtein.similarity(result, result2));
+		System.out.println("JaroWinkler: " + jaro.similarity(t1, t2));
+		System.out.println("Levenshtein: " + levenshtein.similarity(t1, t3));
 			
 	}
 
