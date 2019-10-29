@@ -1,4 +1,4 @@
-package model;
+package model.algorithms;
 
 /**
  * Class contains the method Jaro-Winkler metric
@@ -52,7 +52,7 @@ public class JaroWinkler implements CompareStrings {
 		// Calculating number jw
 		jw = dj + (l * 0.1 * (1 - dj));
 
-		return jw;
+		return jw*100;
 	}
 
 }

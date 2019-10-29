@@ -1,4 +1,4 @@
-package model;
+package model.algorithms;
 
 /**
  * Class contains the method Levenshtein metric

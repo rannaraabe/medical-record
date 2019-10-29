@@ -8,10 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import model.Cosine;
-import model.JaroWinkler;
-import model.Levenshtein;
-import model.Trigram;
+import model.algorithms.Cosine;
+import model.algorithms.JaroWinkler;
+import model.algorithms.Levenshtein;
+import model.algorithms.Trigram;
 import view.Main;
 
 public class AlgoritmosController {

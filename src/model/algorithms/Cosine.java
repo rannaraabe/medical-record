@@ -1,4 +1,4 @@
-package model;
+package model.algorithms;
 
 /**
  * Class contains the method Cosine metric
@@ -33,6 +33,6 @@ public class Cosine implements CompareStrings {
 		// Multiplication of denominator
 		double multD = Math.sqrt(sumA) * Math.sqrt(sumB);
 
-		return (sumAB / multD);
+		return (sumAB / multD)*100;
 	}
 }

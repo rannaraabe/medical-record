@@ -1,4 +1,4 @@
-package model;
+package model.algorithms;
 
 import java.util.ArrayList;
 
@@ -54,7 +54,7 @@ public class Trigram implements CompareStrings {
 		calc = ((trigA.size() - count) + (trigB.size() - count)) + count;
 	
 		// Return percentage
-		return (count / calc);
+		return (count / calc)*100;
 	}
 
 }

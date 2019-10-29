@@ -1,4 +1,4 @@
-package model;
+package model.algorithms;
 
 /**
  * Interface to calculate string similarity
