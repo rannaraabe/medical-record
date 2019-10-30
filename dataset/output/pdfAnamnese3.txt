@@ -1,35 +1,38 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 17/02/2019 Prontuário: 126630/3
-Paciente: ADNNA EVELYN ALMEIDA ALVES DA SILVA Nome Social:
-Data de Nascimento: 13/08/1998 Nº do Cartão SUS: 703402224983811
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
+Referência: 29/03/2019 Prontuário: 126520/6
+Paciente: CLAUDIA BETY SILVA DO NASCIMENTO Nome Social:
+Data de Nascimento: 16/05/1987 Nº do Cartão SUS: 702801197975369
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 04401
+Leito: 03307
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-GII P0 AI
-IG POR DUM?: 31S 2D
-IG POR USG2ºT: 30S 1D
-Sem comorbidades
-Nega alergias
-Paciente vem devido a dores em baixo ventre que irradiam para a região lombar iniciadas há 5h associada à sensação
-de contração.
-Histórico de internação neste serviço por Trabalho de parto pré-maturo.  Em uso de Utrogestan 2x/d desde 25/01/19.
-Nega cefaleia, epigastralgia, perda líquida, sangramentos, corrimentos, disúria, febre.
-Nega comorbidades e alergias.
-Ao exame:
-PA: 98x61mmHg | Tax: 35,8ºC
-BCF: 148bpm | Au: 22cm | Du: 4/20"/10' | MF +.
-Toque: colo grosso, posterior, semi pérvio, sem perdas vaginais
-Cd: Interno para inibição + Prescrevo Buscopam composto + Solicito HMG, PCR, EAS e urocultura, USG obstétrica.
-Atendimento: MICHELLE ARAUJO MACHADO
-17/02/2019 03:09
-47422317/02/2019 03:08
+G4P2(2 cesáreas, última há 6 anos) A1      37sem5d (DUM e USG de 1º tri)
+DMG controlada com dieta + PRÉ-ECLÂMPSIA ?
+NEGA ALERGIAS
+Paciente com dor em flanco irradiando para baixo frente há 4 dias, aumentando a intensidade e frequência associada a
+aumento do tônus uterino, além disso está com um pouco de cefaleia e enjoo, nega outras queixas.
+Já ficou internada na MEJC para controle da glicemia, quando fez uso de insulina
+PA nunca deu elevada, ficando elevada apenas hoje e com proteinúria +
+Exame físico:
+TA: 144x83   Tax: 36,6ºC
+DU: 2'40''10min
+ACF: 123
+TOQUE VAGINAL: grosso, posterior, impérvio
+Exames complementares
+  USG obstétrica com doppler (08/03/2019): cefálico, 159 bpm; ´placenta grau II, ILA: 20,2; peso estimado: 3.084g, sem
+centralização
+Conduta: solicito rotina de DHEG, cardiotocografia, e prescrevo ondasetrona, dipirona e escopolamina
+CTG GRAU 1
+internamento hospitalar para resolução da gestação
+Atendimento: DEISE AZEVEDO PEREIRA
+29/03/2019 14:28
+48972129/03/2019 14:28
 Anamnese:
-CRM: 4810
-06/09/2019 09:41
+CRM: 9938
+06/09/2019 11:20
 Anamnese - MEDICINA

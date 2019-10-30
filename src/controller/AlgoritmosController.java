@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,11 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import model.utils.ConfusionMatrix;
+import model.utils.NewArchive;
 import view.Main;
 
 public class AlgoritmosController implements Initializable {
@@ -222,8 +226,15 @@ public class AlgoritmosController implements Initializable {
 	}
 	
 	@FXML
-	protected void importarResultados(ActionEvent event) {
-		// TODO salvar em um arquivo txt os resultados e abrir um alert diaglog indicando q salvou ok e mostrando o caminho
+	protected void importarResultados(ActionEvent event) throws FileNotFoundException {
+		NewArchive na = new NewArchive();
+		na.generateFile(taResultados.getText(), 1);
+		
+		Alert dialog = new Alert(AlertType.CONFIRMATION);
+		dialog.setTitle("Importação completa!");
+		dialog.setHeaderText(null);
+		dialog.setContentText("Dados importados com sucesso! Confira na pasta '\\dataset\\resultados\\'.");
+		dialog.show();
 	}
 
 	@FXML

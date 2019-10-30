@@ -1,29 +1,36 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 03/04/2019 Prontuário: 126630/3
-Paciente: ADNNA EVELYN ALMEIDA ALVES DA SILVA Nome Social:
-Data de Nascimento: 13/08/1998 Nº do Cartão SUS: 703402224983811
+Referência: 29/06/2019 Prontuário: 136728/3
+Paciente: CLARISSA DA SILVA SANTOS Nome Social:
+Data de Nascimento: 03/04/2003 Nº do Cartão SUS: 700207908594827
 Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 03325
+Leito: 03310
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-G2P0A1 (1°tri)
-IG: 36 semanas e 3 dias (2º T) e 37 semanas e 4 dias pela DUM
-Paciente encaminhada da araken por TPP, perda liquida há 1h.
-Ao exame: PA 117/86; TAX 36°C
-AU 29; DU 4/30/10 | tonus normal.
-TV colo fino, 5cm, BRLC, cefálico
-CD:
-- CTG agora
-- Solicito HMG + PCR + EAS + urocultura
-Atendimento: THAINA COUTO DE ALMEIDA
-03/04/2019 01:45
-49126303/04/2019 01:45
+16 anos, G1P0A0 com IG de 36s4d por DUM e 35s5d por USG de 2ºT
+Nega alergias e comorbidades
+Paciente encaminhada de Nova Cruz devido a pico hipertensivo (fez 2 hidralazinas +  1 comp de metildopa de 500 mg) e
+dor pélvica refratária a analgesia comum. Paciente refere perda líquida ontem por volta de 18h00 com início das dores
+pélvicas. Nega sangramento. Movimento fetal presente.
+Ao exame: PA 125*78, Temp 35,8, FC 78 bpm
+EGB, vigil, orientada, consciente
+Abdome obstetrico: TU normal, MF +, DU 1/40/10, ACF 135 bpm, AU 30 cm
+Ao exame especular: presença de secreção brancacenta, fluida com odor característico de vaginose, não evidenciado
+perda líquida por OE
+Ao toque: colo grosso, posterior, impervio, sem perdas
+Cd:
+internamento hospitalar para controle de pressão, vigilância de contrações, rastreamento infeccioso, à CTG, solicito USG
+obstetrica com doppler (RCIU?)
+R3 Amanda + Dra Daniele
+Atendimento: AMANDA SAMARA DAVI DE
+LIMA
+29/06/2019 00:25
+52380129/06/2019 00:24
 Anamnese:
-CRM: 8919
-06/09/2019 09:43
+CRM: 8294
+06/09/2019 11:07
 Anamnese - MEDICINA

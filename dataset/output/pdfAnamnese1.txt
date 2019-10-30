@@ -1,32 +1,42 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 07/03/2019 Prontuário: 126520/6
-Paciente: CLAUDIA BETY SILVA DO NASCIMENTO Nome Social:
-Data de Nascimento: 16/05/1987 Nº do Cartão SUS: 702801197975369
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
+Referência: 20/05/2019 Prontuário: 135227/7
+Paciente: ADNA PEREIRA Nome Social:
+Data de Nascimento: 13/12/1994 Nº do Cartão SUS: 700905928675190
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 04404
+Leito: 03303
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-- GIVPIIcAI (último parto há 6 anos).
-- D.U.M. - 15/07/2018 (incerto); IG - 33s4d; IG pela USG do 1º trimestre: 34s4d
-- Diabetes Gestacional atual descompensada com tratamento dietético
-- Internada por ameaça de trabalho de parto prematuro há 15 dias, sendo realizado tocólise e corticoterapia
-Paciente refere que ontem apresentou um pico febril não aferido referindo astenia e sudorese. Relata que desde ontem
-vem apresentando contrações uterinas progressivas, porém, sem perda de líquido.
-Exames: 23/02/2019 Glicemia J 125; Glicemia 2H 251
-Ao exame:  PA - 130x80mmHg; T - 37,6C; BCF: 164bpm; AU:36cm DU: 2/40'/10'' TU: normal; Colo uterino impérvio,
-grosso e posterior
-Conduta:
-Interno para realizar perfil glicêmico
-Atendimento: MARIA OCINETE GUEDES
-PEREIRA
-07/03/2019 08:38
-47992607/03/2019 08:36
+24a;
+G1P0
+IG: 35sem6d
+Comorbidades: Cirurgia para Acalásia em agosto/18; nega HAS e DM.
+Nega uso de medicações contínuas;
+Nega alergias.
+Paciente encaminhada do Hospital de Sto Antônio, por contrações (a cada 20-30min) há 4 dias; nega perdas líquidas,
+sangramentos, queixas urinárias ou outras.
+outras Ao exame: EGB, consciente e orientada, normocorada, normohidratada, anictérica, acianótica, eupneica.
+PA 120x90; Tax 36,7°C
+Abdome: gravídico, AFU:36cm; BCF 123bpm; tônus normal, DU ausente, MF+
+Toque vaginal: colo grosso, médio, impérvio (OCE 1polpa)
+Exames: Hb 9,7; Hto 30; Leuco 7400 (0/61/1/0/33/0/5); Plaquetas 130.000;
+EAS 8 piócitos/campo, bacteriúria moderada;
+TGO 26; TGP 12; ácido úrico 6,1
+CD: Faço buscopam e dipirona agora. Manter em observação.
+Dra Ocinete + R1 Gabriela.
+#18:00 - Paciente reavaliada, continua queixando-se da dor em hipogástrio. Ao exame: DU ausente.
+CD (orientada por Dra Michelle) - Internação hospitalar.
+Solicito rotina, proteinúria em fita, urocultura, mantenho sintomáticos, inicio Cefalexina 500mg 6/6h para ITU e vigilância
+de PA.
+Dra Michelle + R1 Gabriela
+Atendimento: GABRIELA VAZ CURSINO
+20/05/2019 18:27
+50895920/05/2019 18:23
 Anamnese:
-CRM: 2065
-06/09/2019 11:18
+CRM: 9966
+06/09/2019 09:54
 Anamnese - MEDICINA
