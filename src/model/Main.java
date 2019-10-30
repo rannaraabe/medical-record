@@ -2,12 +2,6 @@ package model;
 
 import java.io.IOException;
 
-import model.algorithms.Cosine;
-import model.algorithms.JaroWinkler;
-import model.algorithms.Levenshtein;
-import model.algorithms.Trigram;
-import model.utils.ConfusionMatrix;
-
 public class Main {
 	public static void main(String[] args) throws IOException {
 
@@ -31,28 +25,10 @@ public class Main {
 		 * readerPDF.generateTxtFromPDF(".\\dataset\\617241\\anamnese.pdf", 14); } catch
 		 * (IOException e) { e.printStackTrace(); }
 		 */
-
-		ConfusionMatrix cm = new ConfusionMatrix();
-
-		DataSet data = new DataSet();
-		System.out.println("=====================1===================");
-		String t1 = data.reader(".\\dataset\\output\\pdf1.txt");
-		System.out.println(t1);
-
-		System.out.println("====================2====================");
-		String t2 = data.reader(".\\dataset\\output\\pdf2.txt");
-		System.out.println(t2);
-
-		System.out.println("====================3====================");
-		String t3 = data.reader(".\\dataset\\output\\pdf3.txt");
-		System.out.println(t3);
-
-		System.out.println("====================4====================");
-		String t4 = data.reader(".\\dataset\\output\\pdf4.txt");
-		System.out.println(t4);
-
-		cm.printMatrix(4);
 		
+		DataSet ds = new DataSet();
+		
+//		ds.readerArchive("./dataset/output/pdf1.txt");
 	}
 
 }

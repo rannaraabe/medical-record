@@ -1,6 +1,4 @@
 
-
-
 package controller;
 
 import java.io.IOException;
@@ -79,7 +77,7 @@ public class InitialController {
 	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
 	}
-	
+
 	/////////////////////// Métodos ////////////////////////
 	@FXML
 	protected void selecionarAjuda(ActionEvent event) {
@@ -87,7 +85,13 @@ public class InitialController {
 		Alert dialog = new Alert(AlertType.INFORMATION);
 		dialog.setTitle("Ajuda");
 		dialog.setHeaderText(null);
-		dialog.setContentText("Passo a passo de uso do sistema:");
+		dialog.setContentText("Passo a passo de uso do sistema: \n >Selecione o botão 'Iniciar'"
+				+ "\n >Selecione o botão 'Selecionar prontuários' e escolha os prontuários desejados em .pdf (o sistema permite a escolha de no mínimo dois prontuários por vez)"
+				+ "\n >Clique no botão 'Selecionar métricas'"
+				+ "\n >Selecione as métricas desejadas para comparar os prontuários"
+				+ "\n >Se desejar, escolha os dados que queira para estarem nos resultados finais (por padrão, o sistema informa apenas qual o prontuário e a anamnese)"
+				+ "\n >Clique no botão 'Gerar resultados'"
+				+ "\n >Se desejar, importe os resultados selecionando o botão 'Importar Resultados'");
 		dialog.show();
 	}
 
@@ -102,9 +106,9 @@ public class InitialController {
 		Alert dialog = new Alert(AlertType.INFORMATION);
 		dialog.setTitle("Sobre");
 		dialog.setHeaderText(null);
-		dialog.setContentText("O sistema MT-MR é um sistema que integra IA com Medicina! "
-				+ "O objetivo principal do sistema é minerar dados de prontuários uplados e detectar uma doença "
-				+ "para um pré-diagnóstico.");
+		dialog.setContentText(
+				"O sistema MT-MR é um sistema que integra IA com Medicina. O objetivo principal do sistema é ler dados de prontuários médicos uplados e compará-los entre si para detectar a semelhança entre os dignósticos, através de métricas selecionadas."
+				+ "\nDesenvolvido por Ranna Raabe®");
 		dialog.show();
 	}
 

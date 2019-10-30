@@ -1,20 +1,22 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import model.algorithms.Cosine;
-import model.algorithms.JaroWinkler;
-import model.algorithms.Levenshtein;
-import model.algorithms.Trigram;
+import model.utils.ConfusionMatrix;
 import view.Main;
 
-public class AlgoritmosController {
+public class AlgoritmosController implements Initializable {
 	@FXML
 	private Button btVoltar;
 
@@ -41,7 +43,7 @@ public class AlgoritmosController {
 
 	@FXML
 	private Label lbMostrarDados;
-	
+
 	@FXML
 	private CheckBox cdDadosPaciente;
 
@@ -54,8 +56,11 @@ public class AlgoritmosController {
 	@FXML
 	private CheckBox cbNotasAdicionais;
 
-	private Main mainApp;
+	@FXML
+	private Button btImportar;
 
+	private Main mainApp;
+	
 	public Button getBtVoltar() {
 		return btVoltar;
 	}
@@ -120,39 +125,114 @@ public class AlgoritmosController {
 		this.mainApp = mainApp;
 	}
 
+	public TextArea getTaResultados() {
+		return taResultados;
+	}
+
+	public void setTaResultados(TextArea taResultados) {
+		this.taResultados = taResultados;
+	}
+
+	public Label getLbMostrarDados() {
+		return lbMostrarDados;
+	}
+
+	public void setLbMostrarDados(Label lbMostrarDados) {
+		this.lbMostrarDados = lbMostrarDados;
+	}
+
+	public CheckBox getCdDadosPaciente() {
+		return cdDadosPaciente;
+	}
+
+	public void setCdDadosPaciente(CheckBox cdDadosPaciente) {
+		this.cdDadosPaciente = cdDadosPaciente;
+	}
+
+	public CheckBox getCdDadosAtendimento() {
+		return cdDadosAtendimento;
+	}
+
+	public void setCdDadosAtendimento(CheckBox cdDadosAtendimento) {
+		this.cdDadosAtendimento = cdDadosAtendimento;
+	}
+
+	public CheckBox getCbAnamnese() {
+		return cbAnamnese;
+	}
+
+	public void setCbAnamnese(CheckBox cbAnamnese) {
+		this.cbAnamnese = cbAnamnese;
+	}
+
+	public CheckBox getCbNotasAdicionais() {
+		return cbNotasAdicionais;
+	}
+
+	public void setCbNotasAdicionais(CheckBox cbNotasAdicionais) {
+		this.cbNotasAdicionais = cbNotasAdicionais;
+	}
+
+	public Button getBtImportar() {
+		return btImportar;
+	}
+
+	public void setBtImportar(Button btImportar) {
+		this.btImportar = btImportar;
+	}
+	
 	/////////////////////// Métodos ////////////////////////
 	@FXML
 	protected void gerarResultado(ActionEvent event) throws IOException {
-		// TODO passar os dados
-		if (cbCosine.isSelected()) {
-			Cosine cosine = new Cosine();
-			cosine.similarity("", "");
-			System.out.println("cosine selecionado");
-		}
+		ConfusionMatrix cm = new ConfusionMatrix();
+		
+		int qFiles = 5;
+		
+		if (cbCosine.isSelected())
+			taResultados.setText("Resultados Cosine: \n" + cm.printMatrix(qFiles, "cosine"));
+		
+		/*if (cbCosine.isSelected() && cbTrigram.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram"));
+		
+		if (cbCosine.isSelected() && cbTrigram.isSelected() && cbJaroWinkler.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro"));
+		
+		if (cbCosine.isSelected() && cbTrigram.isSelected() && cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
+		
+		if (cbTrigram.isSelected())
+			taResultados.setText("Resultados Trigram: \n" + cm.printMatrix(qFiles, "trigram"));
+		
+		/*if(cbTrigram.isSelected() && cbJaroWinkler.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro"));
+		
+		if(cbTrigram.isSelected() && cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
+		
+		if (cbJaroWinkler.isSelected())
+			taResultados.setText("Resultados Jaro-Winkler: \n" + cm.printMatrix(qFiles, "jaro"));
+		
+		/*if (cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
+			taResultados.setText(cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
+		
+		if (cbLevenshtein.isSelected())
+			taResultados.setText("Resultados Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein"));
 
-		if (cbJaroWinkler.isSelected()) {
-			JaroWinkler jaro = new JaroWinkler();
-			jaro.similarity("", "");
-			System.out.println("jaro selecionado");
-		}
-
-		if (cbLevenshtein.isSelected()) {
-			Levenshtein levenshtein = new Levenshtein();
-			levenshtein.similarity("", "");
-			System.out.println("levenshtein selecionado");
-		}
-
-		if (cbTrigram.isSelected()) {
-			Trigram trigram = new Trigram();
-			trigram.similarity("", "");
-			System.out.println("trigram selecionado");
-		}
-
-		mainApp.telaResultados();
+		// como pegar os dados da quantidade e dos prontuarios da pagina passada
+	}
+	
+	@FXML
+	protected void importarResultados(ActionEvent event) {
+		// TODO salvar em um arquivo txt os resultados e abrir um alert diaglog indicando q salvou ok e mostrando o caminho
 	}
 
 	@FXML
 	protected void voltarTela(ActionEvent event) throws IOException {
 		mainApp.telaProntuarios();
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
 	}
 }

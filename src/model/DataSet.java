@@ -16,12 +16,12 @@ import java.util.ArrayList;
 public class DataSet {
 		
 	/**
-	 * Read the archive of the texts
+	 * Reading and mining the archive of the texts
 	 * 
 	 * @param path
 	 * @throws IOException 
 	 */
-	public String reader(String path) throws IOException {		
+	public String readerMining(String path) throws IOException {		
 		BufferedReader br = null;
 		String linha = "", text = "";
 		
@@ -43,7 +43,7 @@ public class DataSet {
 					if(noticia.contains("Atendimento: "))
 						break;
 					
-					System.out.println(noticia);
+//					System.out.println(noticia);
 					
 					// Mining the text
 					text = tm.setMethodsMining(noticia);
@@ -78,6 +78,43 @@ public class DataSet {
 			texto += palavra;
 				
 		return texto;
+	}
+	
+	/**
+	 * Reading the archive
+	 * 
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
+	public String readerArchive(String path) throws IOException {		
+		BufferedReader br = null;
+		String linha = "", text = "";
+		
+		// Reading the text
+		try {
+			br = new BufferedReader(new FileReader(path));
+			while ((linha = br.readLine()) != null) {
+				String[] dataset = linha.split("\n");
+				text += dataset[dataset.length - 1] + "\n";
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		//System.out.println(text);
+		return text;
 	}
 	
 }

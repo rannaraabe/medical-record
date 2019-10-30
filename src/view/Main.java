@@ -5,7 +5,6 @@ import java.io.IOException;
 import controller.AlgoritmosController;
 import controller.InitialController;
 import controller.ProntuariosController;
-import controller.ResultadosController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -60,19 +59,6 @@ public class Main extends Application {
 		primaryStage.show();
 
 		AlgoritmosController controller = fxmlAlgoritmos.getController();
-		controller.setMainApp(this);
-	}
-	
-	public void telaResultados() throws IOException {
-		FXMLLoader fxmlResultados = new FXMLLoader();
-		fxmlResultados.setLocation(getClass().getResource("Resultados.fxml"));
-		AnchorPane screenResultados = (AnchorPane) fxmlResultados.load();
-
-		Scene scene = new Scene(screenResultados);
-		primaryStage.setScene(scene);
-		primaryStage.show();
-
-		ResultadosController controller = fxmlResultados.getController();
 		controller.setMainApp(this);
 	}
 

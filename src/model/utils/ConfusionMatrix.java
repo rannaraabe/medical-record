@@ -24,7 +24,7 @@ public class ConfusionMatrix {
 	 * @param qnt
 	 * @throws IOException
 	 */
-	public void printMatrix(int qnt) throws IOException {
+	public String printMatrix(int qnt, String met) throws IOException {
 		Cosine cosine = new Cosine();
 		Trigram trigram = new Trigram();
 		JaroWinkler jaro = new JaroWinkler();
@@ -38,23 +38,38 @@ public class ConfusionMatrix {
 		
 		for (int i = 0; i < qnt; i++) {
 			for (int j = 0; j < qnt; j++) {
-				t1 = data.reader(".\\dataset\\output\\pdf"+ (i+1) +".txt");
-				t2 = data.reader(".\\dataset\\output\\pdf"+ (j+1) +".txt");
-								
-				matrix[i][j] = jaro.similarity(t1, t2);
+				t1 = data.readerMining(".\\dataset\\output\\pdf"+ (i+1) +".txt");
+				t2 = data.readerMining(".\\dataset\\output\\pdf"+ (j+1) +".txt");
+			
+				if(met == "cosine")
+					matrix[i][j] = cosine.similarity(t1, t2);
+				else if(met == "trigram")
+					matrix[i][j] = trigram.similarity(t1, t2);
+				else if(met == "jaro")
+					matrix[i][j] = jaro.similarity(t1, t2);
+				else if(met == "levenshtein")
+					matrix[i][j] = levenshtein.similarity(t1, t2);
 			}
 		}
 		
+		String matriz = "";
 		DecimalFormat df = new DecimalFormat("0.00");
-		
+
 		for (int i = 0; i < qnt; i++) {
 			for (int j = 0; j < qnt; j++) {
-				if(i == j)
-					System.out.print("------" + "        ");
-				else
-					System.out.print(df.format(matrix[i][j]) + "%        ");
+				if (i == j)
+					matriz += "----------" + "        ";
+				else {
+					if(met == "levenshtein")
+						matriz += df.format(matrix[i][j]) + "         ";
+					else
+						matriz += df.format(matrix[i][j]) + "%        ";
+				}
+					
 			}
-			System.out.println("");
+			matriz += "\n";
 		}
+		
+		return matriz;
 	}
 }

@@ -43,7 +43,7 @@ public class ReaderPDF {
 			pdDoc.close();
 
 		// Final making of archive .txt
-		PrintWriter pw = new PrintWriter(".\\dataset\\output\\pdf"+ cod +".txt");
+		PrintWriter pw = new PrintWriter(".\\dataset\\output\\pdfAnamnese"+ cod +".txt");
 		pw.print(parsedText);
 		pw.close();
 	}

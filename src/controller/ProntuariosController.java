@@ -7,10 +7,12 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
+import model.DataSet;
+import model.utils.ReaderPDF;
 import view.Main;
 
 public class ProntuariosController {
@@ -27,6 +29,16 @@ public class ProntuariosController {
 	private Button btMetricas;
 	
 	private Main mainApp;
+	
+	private int quantidade;
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
 
 	public TextArea getTaResultado() {
 		return taResultado;
@@ -70,34 +82,52 @@ public class ProntuariosController {
 
 	/////////////////////// Métodos ////////////////////////	
 	@FXML
-	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException {
+	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException, IOException {
 		FileChooser chooser = new FileChooser();
+		
 		chooser.setTitle("Selecionar arquivo");
 		List<File> files;
+		Alert dialog = new Alert(AlertType.ERROR);
+		
 		do {
 			files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
 			
 			if(files.size() == 1) {
 	        	taResultado.clear();
 	        	
-	        	Alert dialog = new Alert(AlertType.ERROR);
 	    		dialog.setTitle("Error");
 	    		dialog.setHeaderText(null);
 	    		dialog.setContentText("É necessário selecionar no mínimo dois arquivos.");
 	    		dialog.show();
-	    		dialog.wait();
 	        }
+			
 		} while(files.size() == 1);
-                	
+		
+		setQuantidade(files.size());
         printProntuarios(taResultado, files);
 	}
 	
-	private void printProntuarios(TextArea textArea, List<File> files) {
+	private void printProntuarios(TextArea textArea, List<File> files) throws IOException {
         if (files == null || files.isEmpty()) 
             return;
         
-        for (File file : files) 
-            textArea.appendText(file.getAbsoluteFile() + "\n===================================================\n");
+        int cont = 1;
+		ReaderPDF readerPDF = new ReaderPDF();
+		DataSet ds = new DataSet();
+		
+		// Convertendo os arquivos PDF em txt
+        for (File file : files) {
+			readerPDF.generateTxtFromPDF(file.getPath(), cont);
+			cont++;
+		}
+        
+        cont = 1;
+        for (File file : files) {
+        	//System.out.println(file.getPath());
+        	String path = ".\\dataset\\output\\pdfAnamnese"+ cont +".txt";
+            textArea.appendText("================================== "+ file.getName() +" ==================================\n" + ds.readerArchive(path) +"\n");
+            cont++;
+        }
     }
 
 	@FXML

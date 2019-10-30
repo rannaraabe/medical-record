@@ -12,66 +12,58 @@
       <Button fx:id="btVoltar" layoutX="658.0" layoutY="17.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
          <font>
             <Font name="Century Gothic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="btResultado" layoutX="35.0" layoutY="459.0" mnemonicParsing="false" onAction="#gerarResultado" text="Gerar resultados">
+         </font></Button>
+      <Button fx:id="btResultado" layoutX="48.0" layoutY="452.0" mnemonicParsing="false" onAction="#gerarResultado" text="Gerar resultados">
          <font>
             <Font name="Century Gothic" size="12.0" />
-         </font>
-      </Button>
+         </font></Button>
       <Label fx:id="lbSelecionarAlgoritmos" layoutX="21.0" layoutY="50.0" text="Selecionar algoritmos:">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="cbCosine" layoutX="21.0" layoutY="85.0" mnemonicParsing="false" text="Cosine">
+         </font></Label>
+      <CheckBox fx:id="cbCosine" layoutX="21.0" layoutY="75.0" mnemonicParsing="false" text="Cosine">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cbTrigram" layoutX="21.0" layoutY="114.0" mnemonicParsing="false" text="Trigram">
+         </font></CheckBox>
+      <CheckBox fx:id="cbTrigram" layoutX="21.0" layoutY="100.0" mnemonicParsing="false" text="Trigram">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cbLevenshtein" layoutX="21.0" layoutY="144.0" mnemonicParsing="false" text="Levenshtein">
+         </font></CheckBox>
+      <CheckBox fx:id="cbLevenshtein" layoutX="21.0" layoutY="125.0" mnemonicParsing="false" text="Levenshtein">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cbJaroWinkler" layoutX="21.0" layoutY="173.0" mnemonicParsing="false" text="JaroWinkler">
+         </font></CheckBox>
+      <CheckBox fx:id="cbJaroWinkler" layoutX="21.0" layoutY="152.0" mnemonicParsing="false" text="JaroWinkler">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <TextArea fx:id="taResultados" editable="false" layoutX="186.0" layoutY="50.0" prefHeight="432.0" prefWidth="500.0" promptText="                                                         # Prontuários #">
+         </font></CheckBox>
+      <TextArea fx:id="taResultados" editable="false" layoutX="186.0" layoutY="50.0" prefHeight="432.0" prefWidth="500.0" promptText="                                                     ### Resultados ###">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></TextArea>
-      <Label fx:id="lbMostrarDados" layoutX="20.0" layoutY="215.0" text="Mostrar dados:">
+      <Label fx:id="lbMostrarDados" layoutX="21.0" layoutY="186.0" text="Mostrar dados:">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="cdDadosPaciente" layoutX="21.0" layoutY="248.0" mnemonicParsing="false" text="Dados paciente">
+         </font></Label>
+      <CheckBox fx:id="cdDadosPaciente" layoutX="21.0" layoutY="211.0" mnemonicParsing="false" text="Dados paciente">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cdDadosAtendimento" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Dados atendimento">
+         </font></CheckBox>
+      <CheckBox fx:id="cdDadosAtendimento" layoutX="21.0" layoutY="236.0" mnemonicParsing="false" text="Dados atendimento">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cbAnamnese" layoutX="21.0" layoutY="307.0" mnemonicParsing="false" text="Anamnese">
+         </font></CheckBox>
+      <CheckBox fx:id="cbAnamnese" layoutX="21.0" layoutY="261.0" mnemonicParsing="false" text="Anamnese">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="cbNotasAdicionais" layoutX="21.0" layoutY="336.0" mnemonicParsing="false" text="Notas adicionais">
+         </font></CheckBox>
+      <CheckBox fx:id="cbNotasAdicionais" layoutX="21.0" layoutY="286.0" mnemonicParsing="false" text="Notas adicionais">
          <font>
             <Font name="Century Gothic" size="13.0" />
-         </font>
-      </CheckBox>
+         </font></CheckBox>
+      <Button fx:id="btImportar" layoutX="525.0" layoutY="17.0" mnemonicParsing="false" onAction="#importarResultados" text="Importar resultados">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>
