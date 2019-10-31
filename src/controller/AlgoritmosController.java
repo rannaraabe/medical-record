@@ -216,7 +216,8 @@ public class AlgoritmosController implements Initializable {
 		if (cbCosine.isSelected())
 			taResultados.setText(
 					"======================= Resultados Cosine =======================\n" + cm.printMatrix(qFiles, files, "cosine"));
-
+		// TODO selecionar mais do que um algoritmo
+		
 		/*
 		 * if (cbCosine.isSelected() && cbTrigram.isSelected())
 		 * taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" +
@@ -262,11 +263,14 @@ public class AlgoritmosController implements Initializable {
 		if (cbLevenshtein.isSelected())
 			taResultados.setText(
 					"======================= Resultados Levenshtein =======================\n" + cm.printMatrix(qFiles, files, "levenshtein"));
-
+		
+		// TODO imprimir as informações dos arquivos no text area (igual na tela prontuarios)
+		
 	}
 
 	@FXML
 	protected void importarResultados(ActionEvent event) throws FileNotFoundException {
+		// TODO corrigir a importacao adicionando os dados na hora de importar
 		NewArchive na = new NewArchive();
 		na.generateFile(taResultados.getText(), 1);
 
