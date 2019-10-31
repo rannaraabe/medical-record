@@ -11,7 +11,7 @@
    <children>
       <ImageView fx:id="imgElements" fitHeight="551.0" fitWidth="534.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../img/vector.png" />
+            <Image url="@../../img/vector.png" backgroundLoading="true" />
          </image>
       </ImageView>
       <Label layoutX="316.0" layoutY="271.0" text="MT - MEDICINAL RECORD" textFill="#ee725c">

@@ -25,10 +25,10 @@ public class Main extends Application {
 
 	public void telaInicial() throws IOException {
 		FXMLLoader fxmlInicial = new FXMLLoader();
-		fxmlInicial.setLocation(getClass().getResource("Initial.fxml"));
-		AnchorPane screenInitial = (AnchorPane) fxmlInicial.load();
+		fxmlInicial.setLocation(Main.class.getResource("Initial.fxml"));
+		rootLayout = (AnchorPane) fxmlInicial.load();
 		
-		Scene scene = new Scene(screenInitial);		
+		Scene scene = new Scene(rootLayout);		
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
@@ -38,7 +38,7 @@ public class Main extends Application {
 
 	public void telaProntuarios() throws IOException {
 		FXMLLoader fxmlProntuarios = new FXMLLoader();
-		fxmlProntuarios.setLocation(getClass().getResource("Prontuarios.fxml"));
+		fxmlProntuarios.setLocation(Main.class.getResource("Prontuarios.fxml"));
 		AnchorPane screenProntuarios = (AnchorPane) fxmlProntuarios.load();
 
 		Scene scene = new Scene(screenProntuarios);
@@ -51,7 +51,7 @@ public class Main extends Application {
 	
 	public void telaAlgoritmos() throws IOException {
 		FXMLLoader fxmlAlgoritmos = new FXMLLoader();
-		fxmlAlgoritmos.setLocation(getClass().getResource("Algoritmos.fxml"));
+		fxmlAlgoritmos.setLocation(Main.class.getResource("Algoritmos.fxml"));
 		AnchorPane screenAlgoritmos = (AnchorPane) fxmlAlgoritmos.load();
 
 		Scene scene = new Scene(screenAlgoritmos);
