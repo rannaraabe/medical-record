@@ -4,18 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Alert.AlertType;
 import model.utils.ConfusionMatrix;
 import model.utils.NewArchive;
 import view.Main;
@@ -64,15 +64,25 @@ public class AlgoritmosController implements Initializable {
 	private Button btImportar;
 
 	private Main mainApp;
-	
-	private int arquivos;
-	
-	public int getArquivos() {
+
+	private int quantidadeArquivos;
+
+	private List<File> arquivos;
+
+	public List<File> getArquivos() {
 		return arquivos;
 	}
 
-	public void setArquivos(int arquivos) {
+	public void setArquivos(List<File> arquivos) {
 		this.arquivos = arquivos;
+	}
+
+	public int getQuantidadeArquivos() {
+		return quantidadeArquivos;
+	}
+
+	public void setQuantidadeArquivos(int quantidadeArquivos) {
+		this.quantidadeArquivos = quantidadeArquivos;
 	}
 
 	public Button getBtVoltar() {
@@ -194,51 +204,72 @@ public class AlgoritmosController implements Initializable {
 	public void setBtImportar(Button btImportar) {
 		this.btImportar = btImportar;
 	}
-	
+
 	/////////////////////// Métodos ////////////////////////
 	@FXML
 	protected void gerarResultado(ActionEvent event) throws IOException {
 		ConfusionMatrix cm = new ConfusionMatrix();
-		
-		int qFiles = getArquivos();
-		
+
+		int qFiles = getQuantidadeArquivos();
+		List<File> files = getArquivos();
+
 		if (cbCosine.isSelected())
-			taResultados.setText("Resultados Cosine: \n" + cm.printMatrix(qFiles, "cosine"));
-		
-		/*if (cbCosine.isSelected() && cbTrigram.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram"));
-		
-		if (cbCosine.isSelected() && cbTrigram.isSelected() && cbJaroWinkler.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro"));
-		
-		if (cbCosine.isSelected() && cbTrigram.isSelected() && cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
-		
+			taResultados.setText(
+					"======================= Resultados Cosine =======================\n" + cm.printMatrix(qFiles, files, "cosine"));
+
+		/*
+		 * if (cbCosine.isSelected() && cbTrigram.isSelected())
+		 * taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" +
+		 * cm.printMatrix(qFiles, "trigram"));
+		 * 
+		 * if (cbCosine.isSelected() && cbTrigram.isSelected() &&
+		 * cbJaroWinkler.isSelected()) taResultados.setText(cm.printMatrix(qFiles,
+		 * "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" +
+		 * cm.printMatrix(qFiles, "jaro"));
+		 * 
+		 * if (cbCosine.isSelected() && cbTrigram.isSelected() &&
+		 * cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
+		 * taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" +
+		 * cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") +
+		 * "\n" + cm.printMatrix(qFiles, "levenshtein"));
+		 */
+
 		if (cbTrigram.isSelected())
-			taResultados.setText("Resultados Trigram: \n" + cm.printMatrix(qFiles, "trigram"));
-		
-		/*if(cbTrigram.isSelected() && cbJaroWinkler.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro"));
-		
-		if(cbTrigram.isSelected() && cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
-		
+			taResultados.setText(
+					"======================= Resultados Trigram =======================\n" + cm.printMatrix(qFiles, files, "trigram"));
+
+		/*
+		 * if(cbTrigram.isSelected() && cbJaroWinkler.isSelected())
+		 * taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" +
+		 * cm.printMatrix(qFiles, "jaro"));
+		 * 
+		 * if(cbTrigram.isSelected() && cbJaroWinkler.isSelected() &&
+		 * cbLevenshtein.isSelected()) taResultados.setText(cm.printMatrix(qFiles,
+		 * "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" +
+		 * cm.printMatrix(qFiles, "levenshtein"));
+		 */
+
 		if (cbJaroWinkler.isSelected())
-			taResultados.setText("Resultados Jaro-Winkler: \n" + cm.printMatrix(qFiles, "jaro"));
-		
-		/*if (cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
-			taResultados.setText(cm.printMatrix(qFiles, "jaro") + "\n" + cm.printMatrix(qFiles, "levenshtein"));*/
-		
+			taResultados.setText(
+					"====================== Resultados Jaro-Winkler ======================\n" + cm.printMatrix(qFiles, files, "jaro"));
+
+		/*
+		 * if (cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
+		 * taResultados.setText(cm.printMatrix(qFiles, "jaro") + "\n" +
+		 * cm.printMatrix(qFiles, "levenshtein"));
+		 */
+
 		if (cbLevenshtein.isSelected())
-			taResultados.setText("Resultados Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein"));
-	
+			taResultados.setText(
+					"======================= Resultados Levenshtein =======================\n" + cm.printMatrix(qFiles, files, "levenshtein"));
+
 	}
-	
+
 	@FXML
 	protected void importarResultados(ActionEvent event) throws FileNotFoundException {
 		NewArchive na = new NewArchive();
 		na.generateFile(taResultados.getText(), 1);
-		
+
 		Alert dialog = new Alert(AlertType.CONFIRMATION);
 		dialog.setTitle("Importação completa!");
 		dialog.setHeaderText(null);
@@ -250,11 +281,13 @@ public class AlgoritmosController implements Initializable {
 	protected void voltarTela(ActionEvent event) throws IOException {
 		mainApp.telaProntuarios();
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		setArquivos(ProntuariosController.getQuantidade());
+		setQuantidadeArquivos(ProntuariosController.getQuantidade());
+		setArquivos(ProntuariosController.getArquivos());
+
 		System.out.println(getArquivos());
 	}
 }

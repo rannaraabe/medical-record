@@ -6,8 +6,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.naming.spi.InitialContextFactory;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,13 +34,23 @@ public class ProntuariosController implements Initializable {
 	private Main mainApp;
 	
 	private static int quantidade;
+	
+	private static List<File> arquivos;
+	
+	public static List<File> getArquivos() {
+		return arquivos;
+	}
+
+	public static void setArquivos(List<File> arquivos) {
+		ProntuariosController.arquivos = arquivos;
+	}
 
 	public static int getQuantidade() {
 		return quantidade;
 	}
 
 	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+		ProntuariosController.quantidade = quantidade;
 	}
 
 	public TextArea getTaResultado() {
@@ -108,7 +116,9 @@ public class ProntuariosController implements Initializable {
 			
 		} while(files.size() == 1);
 		
+		
 		setQuantidade(files.size());
+		setArquivos(files);
         printProntuarios(taResultado, files);
 	}
 	
@@ -116,17 +126,17 @@ public class ProntuariosController implements Initializable {
         if (files == null || files.isEmpty()) 
             return;
         
-        int cont = 1;
-		ReaderPDF readerPDF = new ReaderPDF();
 		DataSet ds = new DataSet();
+		ReaderPDF readerPDF = new ReaderPDF();
+		int cont = 1;
 		
 		// Convertendo os arquivos PDF em txt
-        for (File file : files) {
+		for (File file : files) {
 			readerPDF.generateTxtFromPDF(file.getPath(), cont);
 			cont++;
 		}
-        
-        cont = 1;
+		
+		// Imprimindo os arquivos txt no text area
         for (File file : files) {
         	//System.out.println(file.getPath());
         	String path = ".\\dataset\\output\\pdfAnamnese"+ cont +".txt";

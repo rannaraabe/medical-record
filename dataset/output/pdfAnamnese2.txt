@@ -1,36 +1,35 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 29/06/2019 Prontuário: 136728/3
-Paciente: CLARISSA DA SILVA SANTOS Nome Social:
-Data de Nascimento: 03/04/2003 Nº do Cartão SUS: 700207908594827
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
+Referência: 11/02/2019 Prontuário: 127454/7
+Paciente: ADRIANA ALVES SIRINO Nome Social:
+Data de Nascimento: 21/02/1978 Nº do Cartão SUS: 708201678886341
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
 Equipe:
-Leito: 03310
+Leito: 04408
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-16 anos, G1P0A0 com IG de 36s4d por DUM e 35s5d por USG de 2ºT
-Nega alergias e comorbidades
-Paciente encaminhada de Nova Cruz devido a pico hipertensivo (fez 2 hidralazinas +  1 comp de metildopa de 500 mg) e
-dor pélvica refratária a analgesia comum. Paciente refere perda líquida ontem por volta de 18h00 com início das dores
-pélvicas. Nega sangramento. Movimento fetal presente.
-Ao exame: PA 125*78, Temp 35,8, FC 78 bpm
-EGB, vigil, orientada, consciente
-Abdome obstetrico: TU normal, MF +, DU 1/40/10, ACF 135 bpm, AU 30 cm
-Ao exame especular: presença de secreção brancacenta, fluida com odor característico de vaginose, não evidenciado
-perda líquida por OE
-Ao toque: colo grosso, posterior, impervio, sem perdas
-Cd:
-internamento hospitalar para controle de pressão, vigilância de contrações, rastreamento infeccioso, à CTG, solicito USG
-obstetrica com doppler (RCIU?)
-R3 Amanda + Dra Daniele
-Atendimento: AMANDA SAMARA DAVI DE
-LIMA
-29/06/2019 00:25
-52380129/06/2019 00:24
+G6 P4 (V ) A1
+DUM: 28/07/18 - INCOMPATIVEL
+IG:  27S 2D (USG 1º T)
+Paciente encaminhada por:  DMG+ HASC + OBESIDADE.
+Medicamentos em uso: METILDOPA 750MG + AAS 100mg + NPH 36-0-18UI.
+Vem encaminhada do pré natal de alto risco para perfil glicêmico.
+Paciente com queixas de sintomas compatíveis com episódios de hipoglicemia , traz perfil alterado. PERFIL GLICÊMICO
+(08/02 A 11/02): J: 33 - 107  PC 1H: 54 - 63  PA 1H: 44 - 100  PJ 1H: 65 - 154
+ao exame:
+pa 119x79   temp 35,6° hgt 91ACF 125 BPM
+movimento fetais presente  du ausente tu normal  au 29 cm
+conduta:
+solicito perfil glicêmico e usg doppler
+Ao alto risco
+Atendimento: RAFAEL BRUNO DIAS DE
+MEDEIROS DANTAS
+11/02/2019 13:00
+47183911/02/2019 13:00
 Anamnese:
-CRM: 8294
-06/09/2019 11:07
+CRM: 8824
+06/09/2019 10:48
 Anamnese - MEDICINA

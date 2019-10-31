@@ -2,6 +2,8 @@ package model;
 
 import java.io.IOException;
 
+import model.utils.ConfusionMatrix;
+
 public class Main {
 	public static void main(String[] args) throws IOException {
 
@@ -27,8 +29,13 @@ public class Main {
 		 */
 		
 		DataSet ds = new DataSet();
+		ConfusionMatrix cm = new ConfusionMatrix();
 		
-//		ds.readerArchive("./dataset/output/pdf1.txt");
+		ds.readerArchive("./dataset/output/pdf1.txt");
+		ds.readerArchive("./dataset/output/pdf2.txt");
+		ds.readerArchive("./dataset/output/pdf3.txt");
+		
+//		cm.printMatrix(3, "cosine");
 	}
 
 }

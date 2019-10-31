@@ -1,14 +1,15 @@
 package model.utils;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.List;
 
 import model.DataSet;
 import model.algorithms.Cosine;
 import model.algorithms.JaroWinkler;
 import model.algorithms.Levenshtein;
 import model.algorithms.Trigram;
-
-import java.text.DecimalFormat;
 
 /**
  * Class contains the method for to plot matrix
@@ -24,7 +25,7 @@ public class ConfusionMatrix {
 	 * @param qnt
 	 * @throws IOException
 	 */
-	public String printMatrix(int qnt, String met) throws IOException {
+	public String printMatrix(int qnt, List<File> files, String met) throws IOException {
 		Cosine cosine = new Cosine();
 		Trigram trigram = new Trigram();
 		JaroWinkler jaro = new JaroWinkler();
@@ -38,8 +39,9 @@ public class ConfusionMatrix {
 		
 		for (int i = 0; i < qnt; i++) {
 			for (int j = 0; j < qnt; j++) {
-				t1 = data.readerMining(".\\dataset\\output\\pdf"+ (i+1) +".txt");
-				t2 = data.readerMining(".\\dataset\\output\\pdf"+ (j+1) +".txt");
+				
+				t1 = data.readerMining(files.get(i).getAbsolutePath());
+				t2 = data.readerMining(files.get(j).getAbsolutePath());
 			
 				if(met == "cosine")
 					matrix[i][j] = cosine.similarity(t1, t2);
