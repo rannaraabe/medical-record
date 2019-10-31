@@ -2,10 +2,15 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
+
+import javax.naming.spi.InitialContextFactory;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -15,7 +20,7 @@ import model.DataSet;
 import model.utils.ReaderPDF;
 import view.Main;
 
-public class ProntuariosController {
+public class ProntuariosController implements Initializable {
 	@FXML
 	private TextArea taResultado;
 	
@@ -30,9 +35,9 @@ public class ProntuariosController {
 	
 	private Main mainApp;
 	
-	private int quantidade;
+	private static int quantidade;
 
-	public int getQuantidade() {
+	public static int getQuantidade() {
 		return quantidade;
 	}
 
@@ -138,6 +143,12 @@ public class ProntuariosController {
 	@FXML
 	protected void voltarTela(ActionEvent event) throws IOException {
 		mainApp.telaInicial();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

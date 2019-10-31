@@ -65,6 +65,16 @@ public class AlgoritmosController implements Initializable {
 
 	private Main mainApp;
 	
+	private int arquivos;
+	
+	public int getArquivos() {
+		return arquivos;
+	}
+
+	public void setArquivos(int arquivos) {
+		this.arquivos = arquivos;
+	}
+
 	public Button getBtVoltar() {
 		return btVoltar;
 	}
@@ -190,7 +200,7 @@ public class AlgoritmosController implements Initializable {
 	protected void gerarResultado(ActionEvent event) throws IOException {
 		ConfusionMatrix cm = new ConfusionMatrix();
 		
-		int qFiles = 5;
+		int qFiles = getArquivos();
 		
 		if (cbCosine.isSelected())
 			taResultados.setText("Resultados Cosine: \n" + cm.printMatrix(qFiles, "cosine"));
@@ -221,8 +231,7 @@ public class AlgoritmosController implements Initializable {
 		
 		if (cbLevenshtein.isSelected())
 			taResultados.setText("Resultados Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein"));
-
-		// como pegar os dados da quantidade e dos prontuarios da pagina passada
+	
 	}
 	
 	@FXML
@@ -245,5 +254,7 @@ public class AlgoritmosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		setArquivos(ProntuariosController.getQuantidade());
+		System.out.println(getArquivos());
 	}
 }

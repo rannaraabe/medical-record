@@ -7,15 +7,15 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProntuariosController">
    <children>
+      <Button fx:id="btVoltar" layoutX="659.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
       <TextArea fx:id="taResultado" editable="false" layoutX="13.0" layoutY="51.0" prefHeight="407.0" prefWidth="675.0" promptText="                                                                           ### Prontuários ###">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></TextArea>
       <Button fx:id="btProntuarios" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#selecionarProntuarios" text="Selecionar prontuários">
-         <font>
-            <Font name="Century Gothic" size="12.0" />
-         </font></Button>
-      <Button fx:id="btVoltar" layoutX="659.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>

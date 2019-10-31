@@ -1,35 +1,36 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 17/02/2019 Prontuário: 126630/3
-Paciente: ADNNA EVELYN ALMEIDA ALVES DA SILVA Nome Social:
-Data de Nascimento: 13/08/1998 Nº do Cartão SUS: 703402224983811
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
+Referência: 29/06/2019 Prontuário: 136728/3
+Paciente: CLARISSA DA SILVA SANTOS Nome Social:
+Data de Nascimento: 03/04/2003 Nº do Cartão SUS: 700207908594827
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 04401
+Leito: 03310
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-GII P0 AI
-IG POR DUM?: 31S 2D
-IG POR USG2ºT: 30S 1D
-Sem comorbidades
-Nega alergias
-Paciente vem devido a dores em baixo ventre que irradiam para a região lombar iniciadas há 5h associada à sensação
-de contração.
-Histórico de internação neste serviço por Trabalho de parto pré-maturo.  Em uso de Utrogestan 2x/d desde 25/01/19.
-Nega cefaleia, epigastralgia, perda líquida, sangramentos, corrimentos, disúria, febre.
-Nega comorbidades e alergias.
-Ao exame:
-PA: 98x61mmHg | Tax: 35,8ºC
-BCF: 148bpm | Au: 22cm | Du: 4/20"/10' | MF +.
-Toque: colo grosso, posterior, semi pérvio, sem perdas vaginais
-Cd: Interno para inibição + Prescrevo Buscopam composto + Solicito HMG, PCR, EAS e urocultura, USG obstétrica.
-Atendimento: MICHELLE ARAUJO MACHADO
-17/02/2019 03:09
-47422317/02/2019 03:08
+16 anos, G1P0A0 com IG de 36s4d por DUM e 35s5d por USG de 2ºT
+Nega alergias e comorbidades
+Paciente encaminhada de Nova Cruz devido a pico hipertensivo (fez 2 hidralazinas +  1 comp de metildopa de 500 mg) e
+dor pélvica refratária a analgesia comum. Paciente refere perda líquida ontem por volta de 18h00 com início das dores
+pélvicas. Nega sangramento. Movimento fetal presente.
+Ao exame: PA 125*78, Temp 35,8, FC 78 bpm
+EGB, vigil, orientada, consciente
+Abdome obstetrico: TU normal, MF +, DU 1/40/10, ACF 135 bpm, AU 30 cm
+Ao exame especular: presença de secreção brancacenta, fluida com odor característico de vaginose, não evidenciado
+perda líquida por OE
+Ao toque: colo grosso, posterior, impervio, sem perdas
+Cd:
+internamento hospitalar para controle de pressão, vigilância de contrações, rastreamento infeccioso, à CTG, solicito USG
+obstetrica com doppler (RCIU?)
+R3 Amanda + Dra Daniele
+Atendimento: AMANDA SAMARA DAVI DE
+LIMA
+29/06/2019 00:25
+52380129/06/2019 00:24
 Anamnese:
-CRM: 4810
-06/09/2019 09:41
+CRM: 8294
+06/09/2019 11:07
 Anamnese - MEDICINA

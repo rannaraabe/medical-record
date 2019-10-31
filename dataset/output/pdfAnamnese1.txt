@@ -1,29 +1,42 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 03/04/2019 Prontuário: 126630/3
-Paciente: ADNNA EVELYN ALMEIDA ALVES DA SILVA Nome Social:
-Data de Nascimento: 13/08/1998 Nº do Cartão SUS: 703402224983811
+Referência: 20/05/2019 Prontuário: 135227/7
+Paciente: ADNA PEREIRA Nome Social:
+Data de Nascimento: 13/12/1994 Nº do Cartão SUS: 700905928675190
 Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 03325
+Leito: 03303
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-G2P0A1 (1°tri)
-IG: 36 semanas e 3 dias (2º T) e 37 semanas e 4 dias pela DUM
-Paciente encaminhada da araken por TPP, perda liquida há 1h.
-Ao exame: PA 117/86; TAX 36°C
-AU 29; DU 4/30/10 | tonus normal.
-TV colo fino, 5cm, BRLC, cefálico
-CD:
-- CTG agora
-- Solicito HMG + PCR + EAS + urocultura
-Atendimento: THAINA COUTO DE ALMEIDA
-03/04/2019 01:45
-49126303/04/2019 01:45
+24a;
+G1P0
+IG: 35sem6d
+Comorbidades: Cirurgia para Acalásia em agosto/18; nega HAS e DM.
+Nega uso de medicações contínuas;
+Nega alergias.
+Paciente encaminhada do Hospital de Sto Antônio, por contrações (a cada 20-30min) há 4 dias; nega perdas líquidas,
+sangramentos, queixas urinárias ou outras.
+outras Ao exame: EGB, consciente e orientada, normocorada, normohidratada, anictérica, acianótica, eupneica.
+PA 120x90; Tax 36,7°C
+Abdome: gravídico, AFU:36cm; BCF 123bpm; tônus normal, DU ausente, MF+
+Toque vaginal: colo grosso, médio, impérvio (OCE 1polpa)
+Exames: Hb 9,7; Hto 30; Leuco 7400 (0/61/1/0/33/0/5); Plaquetas 130.000;
+EAS 8 piócitos/campo, bacteriúria moderada;
+TGO 26; TGP 12; ácido úrico 6,1
+CD: Faço buscopam e dipirona agora. Manter em observação.
+Dra Ocinete + R1 Gabriela.
+#18:00 - Paciente reavaliada, continua queixando-se da dor em hipogástrio. Ao exame: DU ausente.
+CD (orientada por Dra Michelle) - Internação hospitalar.
+Solicito rotina, proteinúria em fita, urocultura, mantenho sintomáticos, inicio Cefalexina 500mg 6/6h para ITU e vigilância
+de PA.
+Dra Michelle + R1 Gabriela
+Atendimento: GABRIELA VAZ CURSINO
+20/05/2019 18:27
+50895920/05/2019 18:23
 Anamnese:
-CRM: 8919
-06/09/2019 09:43
+CRM: 9966
+06/09/2019 09:54
 Anamnese - MEDICINA
