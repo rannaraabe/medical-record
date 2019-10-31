@@ -2,22 +2,17 @@
 package controller;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import view.Main;
 
-public class InitialController implements Initializable {
+public class InitialController {
 	@FXML
 	private ImageView imgElements;
 
@@ -115,19 +110,5 @@ public class InitialController implements Initializable {
 				"O sistema MT-MR é um sistema que integra IA com Medicina. O objetivo principal do sistema é ler dados de prontuários médicos uplados e compará-los entre si para detectar a semelhança entre os dignósticos, através de métricas selecionadas."
 				+ "\nDesenvolvido por Ranna Raabe®");
 		dialog.show();
-	}
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		System.out.println("bostaaa " + getClass().getClassLoader().getResourceAsStream("./img/vector.png"));
-		System.out.println("bostaaa2 " + getClass().getClassLoader().getResourceAsStream("./img/doctor.png"));
-		
-		InputStream input1 = view.Main.class.getResourceAsStream("./img/vector.png");
-		InputStream input2 = view.Main.class.getResourceAsStream("./img/doctor.png");
-		
-		imgElements.setImage(new Image(input1));
-		imgDoctor.setImage(new Image(input2));
-		
 	}
 }
