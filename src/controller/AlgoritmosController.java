@@ -4,18 +4,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import model.DataSet;
 import model.utils.ConfusionMatrix;
 import model.utils.NewArchive;
@@ -65,9 +71,14 @@ public class AlgoritmosController implements Initializable {
 	@FXML
 	private Button btImportar;
 
+	@FXML
+	private BarChart<String, Number> bcGrafico;
+
 	private Main mainApp;
 
 	private int quantidadeArquivos;
+	
+	private int index = 1;
 
 	private List<File> arquivos;
 
@@ -86,7 +97,7 @@ public class AlgoritmosController implements Initializable {
 	public void setQuantidadeArquivos(int quantidadeArquivos) {
 		this.quantidadeArquivos = quantidadeArquivos;
 	}
-	
+
 	public Main getMainApp() {
 		return mainApp;
 	}
@@ -103,58 +114,23 @@ public class AlgoritmosController implements Initializable {
 		int qFiles = getQuantidadeArquivos();
 		List<File> files = getArquivos();
 
-		if (cbCosine.isSelected())
-			taResultados.setText(
-					"======================= Resultados Cosine =======================\n" + cm.printMatrix(qFiles, files, "cosine"));
 		// TODO selecionar mais do que um algoritmo
-		
-		/*
-		 * if (cbCosine.isSelected() && cbTrigram.isSelected())
-		 * taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" +
-		 * cm.printMatrix(qFiles, "trigram"));
-		 * 
-		 * if (cbCosine.isSelected() && cbTrigram.isSelected() &&
-		 * cbJaroWinkler.isSelected()) taResultados.setText(cm.printMatrix(qFiles,
-		 * "cosine") + "\n" + cm.printMatrix(qFiles, "trigram") + "\n" +
-		 * cm.printMatrix(qFiles, "jaro"));
-		 * 
-		 * if (cbCosine.isSelected() && cbTrigram.isSelected() &&
-		 * cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
-		 * taResultados.setText(cm.printMatrix(qFiles, "cosine") + "\n" +
-		 * cm.printMatrix(qFiles, "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") +
-		 * "\n" + cm.printMatrix(qFiles, "levenshtein"));
-		 */
+
+		if (cbCosine.isSelected())
+			taResultados.setText("Cosine: \n"
+					+ cm.printMatrix(qFiles, files, "cosine"));
 
 		if (cbTrigram.isSelected())
-			taResultados.setText(
-					"======================= Resultados Trigram =======================\n" + cm.printMatrix(qFiles, files, "trigram"));
-
-		/*
-		 * if(cbTrigram.isSelected() && cbJaroWinkler.isSelected())
-		 * taResultados.setText(cm.printMatrix(qFiles, "trigram") + "\n" +
-		 * cm.printMatrix(qFiles, "jaro"));
-		 * 
-		 * if(cbTrigram.isSelected() && cbJaroWinkler.isSelected() &&
-		 * cbLevenshtein.isSelected()) taResultados.setText(cm.printMatrix(qFiles,
-		 * "trigram") + "\n" + cm.printMatrix(qFiles, "jaro") + "\n" +
-		 * cm.printMatrix(qFiles, "levenshtein"));
-		 */
+			taResultados.setText("Resultados Trigram: \n"
+					+ cm.printMatrix(qFiles, files, "trigram"));
 
 		if (cbJaroWinkler.isSelected())
-			taResultados.setText(
-					"====================== Resultados Jaro-Winkler ======================\n" + cm.printMatrix(qFiles, files, "jaro"));
-
-		/*
-		 * if (cbJaroWinkler.isSelected() && cbLevenshtein.isSelected())
-		 * taResultados.setText(cm.printMatrix(qFiles, "jaro") + "\n" +
-		 * cm.printMatrix(qFiles, "levenshtein"));
-		 */
+			taResultados.setText("Resultados Jaro-Winkler: \n"
+					+ cm.printMatrix(qFiles, files, "jaro"));
 
 		if (cbLevenshtein.isSelected())
-			taResultados.setText(
-					"======================= Resultados Levenshtein =======================\n" + cm.printMatrix(qFiles, files, "levenshtein"));
-		
-		// TODO imprimir as informações dos arquivos no text area (igual na tela prontuarios)
+			taResultados.setText("Resultados Levenshtein: \n"
+					+ cm.printMatrix(qFiles, files, "levenshtein"));
 		
 	}
 
@@ -162,8 +138,9 @@ public class AlgoritmosController implements Initializable {
 	protected void exportarResultados(ActionEvent event) throws FileNotFoundException {
 		// TODO corrigir a importacao adicionando os dados na hora de importar
 		NewArchive na = new NewArchive();
-		na.generateFile(taResultados.getText(), 1);
-
+		na.generateFile(taResultados.getText(), index);
+		index++;
+		
 		Alert dialog = new Alert(AlertType.CONFIRMATION);
 		dialog.setTitle("Exportação completa!");
 		dialog.setHeaderText(null);
@@ -171,7 +148,12 @@ public class AlgoritmosController implements Initializable {
 		dialog.show();
 	}
 	
-	private void minerarProntuario(List<File> files, TextArea textArea) throws IOException {
+	@FXML
+    void exibirResultados(MouseEvent event) throws IOException {
+		minerarProntuario(getArquivos());
+    }
+	
+	private String minerarProntuario(List<File> files) throws IOException {
 		DataSet ds = new DataSet();
 		ReaderPDF readerPDF = new ReaderPDF();
 		int cont = 1;
@@ -180,14 +162,17 @@ public class AlgoritmosController implements Initializable {
 			readerPDF.generateTxtFromPDF(file.getPath(), cont);
 			cont++;
 		}
+		
+		String text = "";
 
 		for (File file : files) {
-			// System.out.println(file.getPath());
-			String path = ".\\dataset\\output\\pdfAnamnese" + cont + ".txt";
-			textArea.appendText("================================== " + file.getName()
-					+ " ==================================\n" + ds.readerArchive(path) + "\n");
+			String path = ".\\dataset\\output\\pdf_anamnese" + cont + ".txt";
 			cont++;
+			text += "================================== " + file.getName()
+			+ " ==================================\n" + ds.readerArchive(path) + "\n";
 		}
+		
+		return text;
 	}
 
 	@FXML

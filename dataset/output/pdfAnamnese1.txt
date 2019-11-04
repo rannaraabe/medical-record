@@ -1,36 +1,42 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 29/06/2019 Prontuário: 136728/3
-Paciente: CLARISSA DA SILVA SANTOS Nome Social:
-Data de Nascimento: 03/04/2003 Nº do Cartão SUS: 700207908594827
+Referência: 20/05/2019 Prontuário: 135227/7
+Paciente: ADNA PEREIRA Nome Social:
+Data de Nascimento: 13/12/1994 Nº do Cartão SUS: 700905928675190
 Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 03310
+Leito: 03303
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-16 anos, G1P0A0 com IG de 36s4d por DUM e 35s5d por USG de 2ºT
-Nega alergias e comorbidades
-Paciente encaminhada de Nova Cruz devido a pico hipertensivo (fez 2 hidralazinas +  1 comp de metildopa de 500 mg) e
-dor pélvica refratária a analgesia comum. Paciente refere perda líquida ontem por volta de 18h00 com início das dores
-pélvicas. Nega sangramento. Movimento fetal presente.
-Ao exame: PA 125*78, Temp 35,8, FC 78 bpm
-EGB, vigil, orientada, consciente
-Abdome obstetrico: TU normal, MF +, DU 1/40/10, ACF 135 bpm, AU 30 cm
-Ao exame especular: presença de secreção brancacenta, fluida com odor característico de vaginose, não evidenciado
-perda líquida por OE
-Ao toque: colo grosso, posterior, impervio, sem perdas
-Cd:
-internamento hospitalar para controle de pressão, vigilância de contrações, rastreamento infeccioso, à CTG, solicito USG
-obstetrica com doppler (RCIU?)
-R3 Amanda + Dra Daniele
-Atendimento: AMANDA SAMARA DAVI DE
-LIMA
-29/06/2019 00:25
-52380129/06/2019 00:24
+24a;
+G1P0
+IG: 35sem6d
+Comorbidades: Cirurgia para Acalásia em agosto/18; nega HAS e DM.
+Nega uso de medicações contínuas;
+Nega alergias.
+Paciente encaminhada do Hospital de Sto Antônio, por contrações (a cada 20-30min) há 4 dias; nega perdas líquidas,
+sangramentos, queixas urinárias ou outras.
+outras Ao exame: EGB, consciente e orientada, normocorada, normohidratada, anictérica, acianótica, eupneica.
+PA 120x90; Tax 36,7°C
+Abdome: gravídico, AFU:36cm; BCF 123bpm; tônus normal, DU ausente, MF+
+Toque vaginal: colo grosso, médio, impérvio (OCE 1polpa)
+Exames: Hb 9,7; Hto 30; Leuco 7400 (0/61/1/0/33/0/5); Plaquetas 130.000;
+EAS 8 piócitos/campo, bacteriúria moderada;
+TGO 26; TGP 12; ácido úrico 6,1
+CD: Faço buscopam e dipirona agora. Manter em observação.
+Dra Ocinete + R1 Gabriela.
+#18:00 - Paciente reavaliada, continua queixando-se da dor em hipogástrio. Ao exame: DU ausente.
+CD (orientada por Dra Michelle) - Internação hospitalar.
+Solicito rotina, proteinúria em fita, urocultura, mantenho sintomáticos, inicio Cefalexina 500mg 6/6h para ITU e vigilância
+de PA.
+Dra Michelle + R1 Gabriela
+Atendimento: GABRIELA VAZ CURSINO
+20/05/2019 18:27
+50895920/05/2019 18:23
 Anamnese:
-CRM: 8294
-06/09/2019 11:07
+CRM: 9966
+06/09/2019 09:54
 Anamnese - MEDICINA

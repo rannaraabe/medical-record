@@ -1,32 +1,38 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 07/03/2019 Prontuário: 126520/6
+Referência: 29/03/2019 Prontuário: 126520/6
 Paciente: CLAUDIA BETY SILVA DO NASCIMENTO Nome Social:
 Data de Nascimento: 16/05/1987 Nº do Cartão SUS: 702801197975369
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
 Equipe:
-Leito: 04404
+Leito: 03307
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-- GIVPIIcAI (último parto há 6 anos).
-- D.U.M. - 15/07/2018 (incerto); IG - 33s4d; IG pela USG do 1º trimestre: 34s4d
-- Diabetes Gestacional atual descompensada com tratamento dietético
-- Internada por ameaça de trabalho de parto prematuro há 15 dias, sendo realizado tocólise e corticoterapia
-Paciente refere que ontem apresentou um pico febril não aferido referindo astenia e sudorese. Relata que desde ontem
-vem apresentando contrações uterinas progressivas, porém, sem perda de líquido.
-Exames: 23/02/2019 Glicemia J 125; Glicemia 2H 251
-Ao exame:  PA - 130x80mmHg; T - 37,6C; BCF: 164bpm; AU:36cm DU: 2/40'/10'' TU: normal; Colo uterino impérvio,
-grosso e posterior
-Conduta:
-Interno para realizar perfil glicêmico
-Atendimento: MARIA OCINETE GUEDES
-PEREIRA
-07/03/2019 08:38
-47992607/03/2019 08:36
+G4P2(2 cesáreas, última há 6 anos) A1      37sem5d (DUM e USG de 1º tri)
+DMG controlada com dieta + PRÉ-ECLÂMPSIA ?
+NEGA ALERGIAS
+Paciente com dor em flanco irradiando para baixo frente há 4 dias, aumentando a intensidade e frequência associada a
+aumento do tônus uterino, além disso está com um pouco de cefaleia e enjoo, nega outras queixas.
+Já ficou internada na MEJC para controle da glicemia, quando fez uso de insulina
+PA nunca deu elevada, ficando elevada apenas hoje e com proteinúria +
+Exame físico:
+TA: 144x83   Tax: 36,6ºC
+DU: 2'40''10min
+ACF: 123
+TOQUE VAGINAL: grosso, posterior, impérvio
+Exames complementares
+  USG obstétrica com doppler (08/03/2019): cefálico, 159 bpm; ´placenta grau II, ILA: 20,2; peso estimado: 3.084g, sem
+centralização
+Conduta: solicito rotina de DHEG, cardiotocografia, e prescrevo ondasetrona, dipirona e escopolamina
+CTG GRAU 1
+internamento hospitalar para resolução da gestação
+Atendimento: DEISE AZEVEDO PEREIRA
+29/03/2019 14:28
+48972129/03/2019 14:28
 Anamnese:
-CRM: 2065
-06/09/2019 11:18
+CRM: 9938
+06/09/2019 11:20
 Anamnese - MEDICINA

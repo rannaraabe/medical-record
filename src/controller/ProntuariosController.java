@@ -24,31 +24,31 @@ import view.Main;
 public class ProntuariosController implements Initializable {
 	@FXML
 	private TextArea taResultado;
-	
+
 	@FXML
 	private Button btProntuarios;
-	
+
 	@FXML
 	private Button btVoltar;
-	
+
 	@FXML
 	private Button btMetricas;
-	
+
 	@FXML
 	private TableView<File> tvResultado;
-	
+
 	@FXML
 	private TableColumn<File, String> colunaArquivo;
-	
+
 	@FXML
 	private TableColumn<File, String> colunaCaminho;
 
 	private Main mainApp;
-	
+
 	private ObservableList<File> observableList;
 
 	private static int quantidade;
-	
+
 	private static List<File> arquivos;
 
 	public static List<File> getArquivos() {
@@ -97,26 +97,29 @@ public class ProntuariosController implements Initializable {
 		} while (files.size() == 1);
 
 		this.observableList = FXCollections.observableArrayList(files);
-		preencherTabela(files);
-
+		preencherTabela();
+		tvResultado.setItems(observableList);
+		
 		setQuantidade(files.size());
 		setArquivos(files);
 	}
 
-	private void preencherTabela(List<File> files) {
-		for (File file : files) {
-			colunaArquivo.setCellValueFactory(new PropertyValueFactory<File, String>(file.getName()));
-			colunaCaminho.setCellValueFactory(new PropertyValueFactory<File, String>(file.getPath()));
-			
-			System.out.println(file.getName() + " " + file.getPath());
-		}
-
-		tvResultado.setItems(observableList);
+	private void preencherTabela() {
+		colunaArquivo.setCellValueFactory(new PropertyValueFactory<File, String>("name"));
+		colunaCaminho.setCellValueFactory(new PropertyValueFactory<File, String>("path"));
 	}
 
 	@FXML
 	protected void selecionarMetricas(ActionEvent event) throws IOException {
-		mainApp.telaAlgoritmos();
+		if (getQuantidade() == 0) {
+			Alert dialog = new Alert(AlertType.ERROR);
+			dialog.setTitle("Error");
+			dialog.setHeaderText(null);
+			dialog.setContentText("É necessário selecionar arquivos para prosseguir.");
+			dialog.show();
+		} else {
+			mainApp.telaAlgoritmos();
+		}
 	}
 
 	@FXML
