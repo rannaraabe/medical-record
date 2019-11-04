@@ -33,46 +33,6 @@ public class InitialController implements Initializable {
 
 	private Main mainApp;
 
-	public ImageView getImgElements() {
-		return imgElements;
-	}
-
-	public void setImgElements(ImageView imgElements) {
-		this.imgElements = imgElements;
-	}
-
-	public ImageView getImgDoctor() {
-		return imgDoctor;
-	}
-
-	public void setImgDoctor(ImageView imgDoctor) {
-		this.imgDoctor = imgDoctor;
-	}
-
-	public Button getBtIniciar() {
-		return btIniciar;
-	}
-
-	public void setBtIniciar(Button btIniciar) {
-		this.btIniciar = btIniciar;
-	}
-
-	public Button getBtAjuda() {
-		return btAjuda;
-	}
-
-	public void setBtAjuda(Button btAjuda) {
-		this.btAjuda = btAjuda;
-	}
-
-	public Button getBtSobre() {
-		return btSobre;
-	}
-
-	public void setBtSobre(Button btSobre) {
-		this.btSobre = btSobre;
-	}
-
 	public Application getMainApp() {
 		return mainApp;
 	}
@@ -94,7 +54,7 @@ public class InitialController implements Initializable {
 				+ "\n >Selecione as métricas desejadas para comparar os prontuários"
 				+ "\n >Se desejar, escolha os dados que queira para estarem nos resultados finais (por padrão, o sistema informa apenas qual o prontuário e a anamnese)"
 				+ "\n >Clique no botão 'Gerar resultados'"
-				+ "\n >Se desejar, importe os resultados selecionando o botão 'Importar Resultados'");
+				+ "\n >Se desejar, exporte os resultados selecionando o botão 'Exportar Resultados'");
 		dialog.show();
 	}
 

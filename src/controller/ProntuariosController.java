@@ -6,16 +6,19 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
-import model.DataSet;
-import model.utils.ReaderPDF;
 import view.Main;
 
 public class ProntuariosController implements Initializable {
@@ -31,12 +34,23 @@ public class ProntuariosController implements Initializable {
 	@FXML
 	private Button btMetricas;
 	
+	@FXML
+	private TableView<File> tvResultado;
+	
+	@FXML
+	private TableColumn<File, String> colunaArquivo;
+	
+	@FXML
+	private TableColumn<File, String> colunaCaminho;
+
 	private Main mainApp;
 	
+	private ObservableList<File> observableList;
+
 	private static int quantidade;
 	
 	private static List<File> arquivos;
-	
+
 	public static List<File> getArquivos() {
 		return arquivos;
 	}
@@ -53,38 +67,6 @@ public class ProntuariosController implements Initializable {
 		ProntuariosController.quantidade = quantidade;
 	}
 
-	public TextArea getTaResultado() {
-		return taResultado;
-	}
-
-	public void setTaResultado(TextArea taResultado) {
-		this.taResultado = taResultado;
-	}
-
-	public Button getBtProntuarios() {
-		return btProntuarios;
-	}
-
-	public void setBtProntuarios(Button btProntuarios) {
-		this.btProntuarios = btProntuarios;
-	}
-
-	public Button getBtVoltar() {
-		return btVoltar;
-	}
-
-	public void setBtVoltar(Button btVoltar) {
-		this.btVoltar = btVoltar;
-	}
-
-	public Button getBtMetricas() {
-		return btMetricas;
-	}
-
-	public void setBtMetricas(Button btMetricas) {
-		this.btMetricas = btMetricas;
-	}
-
 	public Main getMainApp() {
 		return mainApp;
 	}
@@ -93,57 +75,44 @@ public class ProntuariosController implements Initializable {
 		this.mainApp = mainApp;
 	}
 
-	/////////////////////// Métodos ////////////////////////	
+	/////////////////////// Métodos ////////////////////////
 	@FXML
 	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException, IOException {
 		FileChooser chooser = new FileChooser();
-		
 		chooser.setTitle("Selecionar arquivo");
+
 		List<File> files;
 		Alert dialog = new Alert(AlertType.ERROR);
-		
+
 		do {
 			files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
-			
-			if(files.size() == 1) {
-	        	taResultado.clear();
-	        	
-	    		dialog.setTitle("Error");
-	    		dialog.setHeaderText(null);
-	    		dialog.setContentText("É necessário selecionar no mínimo dois arquivos.");
-	    		dialog.show();
-	        }
-			
-		} while(files.size() == 1);
-		
-		
+			if (files.size() == 1) {
+				taResultado.clear();
+
+				dialog.setTitle("Error");
+				dialog.setHeaderText(null);
+				dialog.setContentText("É necessário selecionar no mínimo dois arquivos.");
+				dialog.show();
+			}
+		} while (files.size() == 1);
+
+		this.observableList = FXCollections.observableArrayList(files);
+		preencherTabela(files);
+
 		setQuantidade(files.size());
 		setArquivos(files);
-        printProntuarios(taResultado, files);
 	}
-	
-	private void printProntuarios(TextArea textArea, List<File> files) throws IOException {
-        if (files == null || files.isEmpty()) 
-            return;
-        
-		DataSet ds = new DataSet();
-		ReaderPDF readerPDF = new ReaderPDF();
-		int cont = 1;
-		
-		// Convertendo os arquivos PDF em txt
+
+	private void preencherTabela(List<File> files) {
 		for (File file : files) {
-			readerPDF.generateTxtFromPDF(file.getPath(), cont);
-			cont++;
+			colunaArquivo.setCellValueFactory(new PropertyValueFactory<File, String>(file.getName()));
+			colunaCaminho.setCellValueFactory(new PropertyValueFactory<File, String>(file.getPath()));
+			
+			System.out.println(file.getName() + " " + file.getPath());
 		}
-		
-		// Imprimindo os arquivos txt no text area
-        for (File file : files) {
-        	//System.out.println(file.getPath());
-        	String path = ".\\dataset\\output\\pdfAnamnese"+ cont +".txt";
-            textArea.appendText("================================== "+ file.getName() +" ==================================\n" + ds.readerArchive(path) +"\n");
-            cont++;
-        }
-    }
+
+		tvResultado.setItems(observableList);
+	}
 
 	@FXML
 	protected void selecionarMetricas(ActionEvent event) throws IOException {
@@ -158,7 +127,6 @@ public class ProntuariosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		
 	}
 
 }

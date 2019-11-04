@@ -16,8 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import model.DataSet;
 import model.utils.ConfusionMatrix;
 import model.utils.NewArchive;
+import model.utils.ReaderPDF;
 import view.Main;
 
 public class AlgoritmosController implements Initializable {
@@ -84,125 +86,13 @@ public class AlgoritmosController implements Initializable {
 	public void setQuantidadeArquivos(int quantidadeArquivos) {
 		this.quantidadeArquivos = quantidadeArquivos;
 	}
-
-	public Button getBtVoltar() {
-		return btVoltar;
-	}
-
-	public void setBtVoltar(Button btVoltar) {
-		this.btVoltar = btVoltar;
-	}
-
-	public Button getBtResultado() {
-		return btResultado;
-	}
-
-	public void setBtResultado(Button btResultado) {
-		this.btResultado = btResultado;
-	}
-
-	public Label getLbSelecionarAlgoritmos() {
-		return lbSelecionarAlgoritmos;
-	}
-
-	public void setLbSelecionarAlgoritmos(Label lbSelecionarAlgoritmos) {
-		this.lbSelecionarAlgoritmos = lbSelecionarAlgoritmos;
-	}
-
-	public CheckBox getCbCosine() {
-		return cbCosine;
-	}
-
-	public void setCbCosine(CheckBox cbCosine) {
-		this.cbCosine = cbCosine;
-	}
-
-	public CheckBox getCbTrigram() {
-		return cbTrigram;
-	}
-
-	public void setCbTrigram(CheckBox cbTrigram) {
-		this.cbTrigram = cbTrigram;
-	}
-
-	public CheckBox getCbLevenshtein() {
-		return cbLevenshtein;
-	}
-
-	public void setCbLevenshtein(CheckBox cbLevenshtein) {
-		this.cbLevenshtein = cbLevenshtein;
-	}
-
-	public CheckBox getCbJaroWinkler() {
-		return cbJaroWinkler;
-	}
-
-	public void setCbJaroWinkler(CheckBox cbJaroWinkler) {
-		this.cbJaroWinkler = cbJaroWinkler;
-	}
-
+	
 	public Main getMainApp() {
 		return mainApp;
 	}
 
 	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
-	}
-
-	public TextArea getTaResultados() {
-		return taResultados;
-	}
-
-	public void setTaResultados(TextArea taResultados) {
-		this.taResultados = taResultados;
-	}
-
-	public Label getLbMostrarDados() {
-		return lbMostrarDados;
-	}
-
-	public void setLbMostrarDados(Label lbMostrarDados) {
-		this.lbMostrarDados = lbMostrarDados;
-	}
-
-	public CheckBox getCdDadosPaciente() {
-		return cdDadosPaciente;
-	}
-
-	public void setCdDadosPaciente(CheckBox cdDadosPaciente) {
-		this.cdDadosPaciente = cdDadosPaciente;
-	}
-
-	public CheckBox getCdDadosAtendimento() {
-		return cdDadosAtendimento;
-	}
-
-	public void setCdDadosAtendimento(CheckBox cdDadosAtendimento) {
-		this.cdDadosAtendimento = cdDadosAtendimento;
-	}
-
-	public CheckBox getCbAnamnese() {
-		return cbAnamnese;
-	}
-
-	public void setCbAnamnese(CheckBox cbAnamnese) {
-		this.cbAnamnese = cbAnamnese;
-	}
-
-	public CheckBox getCbNotasAdicionais() {
-		return cbNotasAdicionais;
-	}
-
-	public void setCbNotasAdicionais(CheckBox cbNotasAdicionais) {
-		this.cbNotasAdicionais = cbNotasAdicionais;
-	}
-
-	public Button getBtImportar() {
-		return btImportar;
-	}
-
-	public void setBtImportar(Button btImportar) {
-		this.btImportar = btImportar;
 	}
 
 	/////////////////////// Métodos ////////////////////////
@@ -269,16 +159,35 @@ public class AlgoritmosController implements Initializable {
 	}
 
 	@FXML
-	protected void importarResultados(ActionEvent event) throws FileNotFoundException {
+	protected void exportarResultados(ActionEvent event) throws FileNotFoundException {
 		// TODO corrigir a importacao adicionando os dados na hora de importar
 		NewArchive na = new NewArchive();
 		na.generateFile(taResultados.getText(), 1);
 
 		Alert dialog = new Alert(AlertType.CONFIRMATION);
-		dialog.setTitle("Importação completa!");
+		dialog.setTitle("Exportação completa!");
 		dialog.setHeaderText(null);
-		dialog.setContentText("Dados importados com sucesso! Confira na pasta '\\dataset\\resultados\\'.");
+		dialog.setContentText("Dados exportados com sucesso! Confira na pasta '\\dataset\\resultados\\'.");
 		dialog.show();
+	}
+	
+	private void minerarProntuario(List<File> files, TextArea textArea) throws IOException {
+		DataSet ds = new DataSet();
+		ReaderPDF readerPDF = new ReaderPDF();
+		int cont = 1;
+
+		for (File file : files) {
+			readerPDF.generateTxtFromPDF(file.getPath(), cont);
+			cont++;
+		}
+
+		for (File file : files) {
+			// System.out.println(file.getPath());
+			String path = ".\\dataset\\output\\pdfAnamnese" + cont + ".txt";
+			textArea.appendText("================================== " + file.getName()
+					+ " ==================================\n" + ds.readerArchive(path) + "\n");
+			cont++;
+		}
 	}
 
 	@FXML

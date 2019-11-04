@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -11,10 +12,6 @@
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
-      <TextArea fx:id="taResultado" editable="false" layoutX="13.0" layoutY="51.0" prefHeight="407.0" prefWidth="675.0" promptText="                                                                           ### Prontuários ###">
-         <font>
-            <Font name="Century Gothic" size="13.0" />
-         </font></TextArea>
       <Button fx:id="btProntuarios" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#selecionarProntuarios" text="Selecionar prontuários">
          <font>
             <Font name="Century Gothic" size="12.0" />
@@ -23,5 +20,11 @@
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
+      <TableView fx:id="tvResultado" layoutX="16.0" layoutY="53.0" prefHeight="402.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="colunaArquivo" prefWidth="241.0" text="Arquivo" />
+          <TableColumn fx:id="colunaCaminho" prefWidth="426.0" text="Caminho" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

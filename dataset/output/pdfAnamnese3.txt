@@ -1,42 +1,32 @@
 1/ 1
 Anamnese - MEDICINA
 Dados do Paciente
-Referência: 03/01/2019 Prontuário: 130382/5
-Paciente: CLAUDIANE FERNANDES DO NASCIMENTO Nome Social:
-Data de Nascimento: 29/01/2000 Nº do Cartão SUS: 700000234680800
-Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE OBSTETRÍCIA II
+Referência: 07/03/2019 Prontuário: 126520/6
+Paciente: CLAUDIA BETY SILVA DO NASCIMENTO Nome Social:
+Data de Nascimento: 16/05/1987 Nº do Cartão SUS: 702801197975369
+Especialidade/Agenda: OBSTETRÍCIA Unidade: UNIDADE DE ALTO RISCO
 Equipe:
-Leito: 03308
+Leito: 04404
 Data Confirmação:
 Nome do Responsável:
 Notas Adicionais:
 Data Criação:
-GI P0 A0
-IG POR DUM: 40s 1d
-IG POR USG 2ºT: 40s 2d
-Paciente vem encaminhada de São José do Mipibu, devido a elevação dos níveis tensionais.
-Paciente queixa-se de dor em baixo ventre. Refere ainda tonturas, escotomas e turvação visual.
-Refere perda de tampão mucoso há 07 dias e sangramento de pequena volume hoje.
-Nega comorbidades. Alérgica à Buscopan composto e Dipirona.
-Ao exame:
-- PA 140x90 mmHg | PA Pós-DLE: 130x90 mmHg  | Tax: 36,9ºC | PTN negativa
-- AU 38cm // DU 1/20/10 // TU norma // MF presentes // FCF 181bpm
-- Toque vaginal: colo grosso, posterior, pérvio para 4cm, BI, cefálico
-- Reflexos patelares normais
-Exames complementes
-- USG (02/01/19): peso 3.373g (80%); ILA: 8,7; dopplervelocimetria sem alterações
-- (02/01/19) Hb 11,3 // Hc 32 // Leuco 9.600 // Plt 248.000 // Ure 18 // Creat 0,58 // Ac Uric 3,1 // TGO 12 // LDH 383 //
-TGP 10 // BT 0,3
-Conduta
-- Solicito nova rotina (nº 13972)
-- CTG agora
-- Interno para assistência materno-fetal
-Dra. Angélica + R1 Francisco
-Atendimento: FRANCISCO JAKSON
-BENIGNO CAVALCANTI
-03/01/2019 01:02
-45719703/01/2019 01:02
+- GIVPIIcAI (último parto há 6 anos).
+- D.U.M. - 15/07/2018 (incerto); IG - 33s4d; IG pela USG do 1º trimestre: 34s4d
+- Diabetes Gestacional atual descompensada com tratamento dietético
+- Internada por ameaça de trabalho de parto prematuro há 15 dias, sendo realizado tocólise e corticoterapia
+Paciente refere que ontem apresentou um pico febril não aferido referindo astenia e sudorese. Relata que desde ontem
+vem apresentando contrações uterinas progressivas, porém, sem perda de líquido.
+Exames: 23/02/2019 Glicemia J 125; Glicemia 2H 251
+Ao exame:  PA - 130x80mmHg; T - 37,6C; BCF: 164bpm; AU:36cm DU: 2/40'/10'' TU: normal; Colo uterino impérvio,
+grosso e posterior
+Conduta:
+Interno para realizar perfil glicêmico
+Atendimento: MARIA OCINETE GUEDES
+PEREIRA
+07/03/2019 08:38
+47992607/03/2019 08:36
 Anamnese:
-CRM: 6745
-06/09/2019 11:51
+CRM: 2065
+06/09/2019 11:18
 Anamnese - MEDICINA
