@@ -5,6 +5,7 @@ import java.io.IOException;
 import controller.AlgoritmosController;
 import controller.InitialController;
 import controller.ProntuariosController;
+import controller.SimilaridadeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -59,6 +60,19 @@ public class Main extends Application {
 		primaryStage.show();
 
 		AlgoritmosController controller = fxmlAlgoritmos.getController();
+		controller.setMainApp(this);
+	}
+	
+	public void telaSimilaridade() throws IOException {
+		FXMLLoader fxmlSimilaridade = new FXMLLoader();
+		fxmlSimilaridade.setLocation(Main.class.getResource("Similaridade.fxml"));
+		AnchorPane screenSimilaridade = (AnchorPane) fxmlSimilaridade.load();
+
+		Scene scene = new Scene(screenSimilaridade);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+		SimilaridadeController controller = fxmlSimilaridade.getController();
 		controller.setMainApp(this);
 	}
 

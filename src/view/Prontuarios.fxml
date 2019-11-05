@@ -6,25 +6,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProntuariosController">
+<AnchorPane maxHeight="500.0" maxWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProntuariosController">
    <children>
-      <Button fx:id="btVoltar" layoutX="659.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
+      <Button fx:id="btVoltar" layoutX="19.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
-      <Button fx:id="btProntuarios" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#selecionarProntuarios" text="Selecionar prontuários">
+      <Button fx:id="btProntuarios" layoutX="538.0" layoutY="18.0" mnemonicParsing="false" onAction="#selecionarProntuarios" text="Selecionar prontuários">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
-      <Button fx:id="btMetricas" layoutX="285.0" layoutY="465.0" mnemonicParsing="false" onAction="#selecionarMetricas" text="Selecionar métricas">
+      <Button fx:id="btMetricas" layoutX="216.0" layoutY="463.0" mnemonicParsing="false" onAction="#selecionarMetricas" text="Selecionar métricas">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
-      <TableView fx:id="tvResultado" layoutX="16.0" layoutY="53.0" prefHeight="402.0" prefWidth="668.0">
+      <TableView fx:id="tvResultado" layoutX="16.0" layoutY="53.0" prefHeight="395.0" prefWidth="668.0">
         <columns>
           <TableColumn fx:id="colunaArquivo" prefWidth="241.0" text="Arquivo" />
           <TableColumn fx:id="colunaCaminho" prefWidth="426.0" text="Caminho" />
         </columns>
       </TableView>
+      <Button fx:id="btSimilaridade" layoutX="360.0" layoutY="463.0" mnemonicParsing="false" onAction="#gerarSimilaridade" text="Gerar similaridade">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

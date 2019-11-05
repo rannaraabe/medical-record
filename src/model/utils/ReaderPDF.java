@@ -22,7 +22,7 @@ public class ReaderPDF {
 	 * @param filename path of archive
 	 * @param cod code for name of archive txt
 	 */
-	public void generateTxtFromPDF(String filename, int cod) throws IOException {
+	public void generateTxtFromPDF(String filename, String cod) throws IOException {
 		// Loading of PDF
 		File f = new File(filename);
 		String parsedText;
@@ -43,7 +43,7 @@ public class ReaderPDF {
 			pdDoc.close();
 
 		// Final making of archive .txt
-		PrintWriter pw = new PrintWriter(".\\dataset\\output\\pdfAnamnese"+ cod +".txt");
+		PrintWriter pw = new PrintWriter(".\\dataset\\output\\pdf_anamnese"+ cod +".txt");
 		pw.print(parsedText);
 		pw.close();
 	}

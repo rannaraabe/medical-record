@@ -4,28 +4,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
-import model.DataSet;
 import model.utils.ConfusionMatrix;
 import model.utils.NewArchive;
-import model.utils.ReaderPDF;
 import view.Main;
 
 public class AlgoritmosController implements Initializable {
@@ -54,33 +47,24 @@ public class AlgoritmosController implements Initializable {
 	private TextArea taResultados;
 
 	@FXML
-	private Label lbMostrarDados;
-
-	@FXML
-	private CheckBox cdDadosPaciente;
-
-	@FXML
-	private CheckBox cdDadosAtendimento;
-
-	@FXML
-	private CheckBox cbAnamnese;
-
-	@FXML
-	private CheckBox cbNotasAdicionais;
-
-	@FXML
 	private Button btImportar;
-
+	
 	@FXML
-	private BarChart<String, Number> bcGrafico;
-
-	private Main mainApp;
+    private TextArea taProntuarios;
 
 	private int quantidadeArquivos;
-	
 	private int index = 1;
-
 	private List<File> arquivos;
+	private String arquivosMinerados;
+	private Main mainApp;
+
+	public Application getMainApp() {
+		return mainApp;
+	}
+
+	public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+	}
 
 	public List<File> getArquivos() {
 		return arquivos;
@@ -98,81 +82,40 @@ public class AlgoritmosController implements Initializable {
 		this.quantidadeArquivos = quantidadeArquivos;
 	}
 
-	public Main getMainApp() {
-		return mainApp;
-	}
-
-	public void setMainApp(Main mainApp) {
-		this.mainApp = mainApp;
-	}
-
 	/////////////////////// Métodos ////////////////////////
 	@FXML
-	protected void gerarResultado(ActionEvent event) throws IOException {
+	protected void verResultados(ActionEvent event) throws IOException {
+		// Imprimo o resultado da matriz com o algoritmo selecionado
 		ConfusionMatrix cm = new ConfusionMatrix();
-
 		int qFiles = getQuantidadeArquivos();
-		List<File> files = getArquivos();
-
-		// TODO selecionar mais do que um algoritmo
-
+				
 		if (cbCosine.isSelected())
-			taResultados.setText("Cosine: \n"
-					+ cm.printMatrix(qFiles, files, "cosine"));
+			taResultados.setText("Cosine: \n" + cm.printMatrix(qFiles, "cosine"));
 
 		if (cbTrigram.isSelected())
-			taResultados.setText("Resultados Trigram: \n"
-					+ cm.printMatrix(qFiles, files, "trigram"));
+			taResultados.setText("Trigram: \n" + cm.printMatrix(qFiles, "trigram"));
 
 		if (cbJaroWinkler.isSelected())
-			taResultados.setText("Resultados Jaro-Winkler: \n"
-					+ cm.printMatrix(qFiles, files, "jaro"));
+			taResultados.setText("Jaro-Winkler: \n" + cm.printMatrix(qFiles, "jaro"));
 
 		if (cbLevenshtein.isSelected())
-			taResultados.setText("Resultados Levenshtein: \n"
-					+ cm.printMatrix(qFiles, files, "levenshtein"));
+			taResultados.setText("Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein"));
 		
 	}
 
 	@FXML
 	protected void exportarResultados(ActionEvent event) throws FileNotFoundException {
-		// TODO corrigir a importacao adicionando os dados na hora de importar
+		// Gero um novo arquivo com os resultados minerados e a matriz
 		NewArchive na = new NewArchive();
 		na.generateFile(taResultados.getText(), index);
 		index++;
-		
+
+		// Exibo um dialog apenas para informar ao usuário
 		Alert dialog = new Alert(AlertType.CONFIRMATION);
 		dialog.setTitle("Exportação completa!");
 		dialog.setHeaderText(null);
 		dialog.setContentText("Dados exportados com sucesso! Confira na pasta '\\dataset\\resultados\\'.");
 		dialog.show();
-	}
-	
-	@FXML
-    void exibirResultados(MouseEvent event) throws IOException {
-		minerarProntuario(getArquivos());
-    }
-	
-	private String minerarProntuario(List<File> files) throws IOException {
-		DataSet ds = new DataSet();
-		ReaderPDF readerPDF = new ReaderPDF();
-		int cont = 1;
-
-		for (File file : files) {
-			readerPDF.generateTxtFromPDF(file.getPath(), cont);
-			cont++;
-		}
-		
-		String text = "";
-
-		for (File file : files) {
-			String path = ".\\dataset\\output\\pdf_anamnese" + cont + ".txt";
-			cont++;
-			text += "================================== " + file.getName()
-			+ " ==================================\n" + ds.readerArchive(path) + "\n";
-		}
-		
-		return text;
 	}
 
 	@FXML
@@ -182,10 +125,18 @@ public class AlgoritmosController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		// Recupero a quantidade de arquivos selecionados na pagina anterior e os
+		// arquivos
 		setQuantidadeArquivos(ProntuariosController.getQuantidade());
 		setArquivos(ProntuariosController.getArquivos());
 
-		System.out.println(getArquivos());
+		try {
+			ProntuariosController.minerandoArquivos(getArquivos());
+			arquivosMinerados = ProntuariosController.printArquivos();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		taProntuarios.setText(arquivosMinerados);
 	}
 }

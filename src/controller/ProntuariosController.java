@@ -2,29 +2,25 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
+import model.DataSet;
+import model.utils.ReaderPDF;
 import view.Main;
 
-public class ProntuariosController implements Initializable {
-	@FXML
-	private TextArea taResultado;
-
+public class ProntuariosController {
 	@FXML
 	private Button btProntuarios;
 
@@ -35,6 +31,9 @@ public class ProntuariosController implements Initializable {
 	private Button btMetricas;
 
 	@FXML
+	private Button btSimilaridade;
+
+	@FXML
 	private TableView<File> tvResultado;
 
 	@FXML
@@ -43,13 +42,18 @@ public class ProntuariosController implements Initializable {
 	@FXML
 	private TableColumn<File, String> colunaCaminho;
 
+	private ObservableList<File> observableList;
+	private static int quantidade;
+	private static List<File> arquivos;
 	private Main mainApp;
 
-	private ObservableList<File> observableList;
+	public Application getMainApp() {
+		return mainApp;
+	}
 
-	private static int quantidade;
-
-	private static List<File> arquivos;
+	public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+	}
 
 	public static List<File> getArquivos() {
 		return arquivos;
@@ -67,19 +71,11 @@ public class ProntuariosController implements Initializable {
 		ProntuariosController.quantidade = quantidade;
 	}
 
-	public Main getMainApp() {
-		return mainApp;
-	}
-
-	public void setMainApp(Main mainApp) {
-		this.mainApp = mainApp;
-	}
-
 	/////////////////////// Métodos ////////////////////////
 	@FXML
 	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException, IOException {
 		FileChooser chooser = new FileChooser();
-		chooser.setTitle("Selecionar arquivo");
+		chooser.setTitle("Selecionar arquivos");
 
 		List<File> files;
 		Alert dialog = new Alert(AlertType.ERROR);
@@ -87,7 +83,6 @@ public class ProntuariosController implements Initializable {
 		do {
 			files = chooser.showOpenMultipleDialog(btProntuarios.getScene().getWindow());
 			if (files.size() == 1) {
-				taResultado.clear();
 
 				dialog.setTitle("Error");
 				dialog.setHeaderText(null);
@@ -99,7 +94,7 @@ public class ProntuariosController implements Initializable {
 		this.observableList = FXCollections.observableArrayList(files);
 		preencherTabela();
 		tvResultado.setItems(observableList);
-		
+
 		setQuantidade(files.size());
 		setArquivos(files);
 	}
@@ -123,13 +118,50 @@ public class ProntuariosController implements Initializable {
 	}
 
 	@FXML
-	protected void voltarTela(ActionEvent event) throws IOException {
-		mainApp.telaInicial();
+	protected void gerarSimilaridade(ActionEvent event) throws IOException {
+		if (getQuantidade() > 2) {
+			Alert dialog = new Alert(AlertType.ERROR);
+			dialog.setTitle("Error");
+			dialog.setHeaderText(null);
+			dialog.setContentText("Só é possível selecionar 2 (dois) arquivos.");
+			dialog.show();
+		} else if (getQuantidade() == 0) {
+			Alert dialog = new Alert(AlertType.ERROR);
+			dialog.setTitle("Error");
+			dialog.setHeaderText(null);
+			dialog.setContentText("É necessário selecionar 2 (dois) arquivos para prosseguir.");
+			dialog.show();
+		} else {
+			mainApp.telaSimilaridade();
+		}
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+	public static void minerandoArquivos(List<File> files) throws IOException {
+		ReaderPDF rPDF = new ReaderPDF();
+		int cont = 0;
+		// Converto os arquivos pdf em txt
+		for (File file : files) {
+			rPDF.generateTxtFromPDF(file.getPath(), "_teste" + cont);
+			cont++;
+		}
+	}
+
+	public static String printArquivos() throws IOException {
+		DataSet data = new DataSet();
+		String arquivosMinerados = "";
+
+		for (int i = 0; i < getQuantidade(); i++) {
+			arquivosMinerados += "================================== " + getArquivos().get(i).getName()
+					+ " ==================================\n"
+					+ data.readerArchive(".\\dataset\\output\\pdf_anamnese_teste" + i + ".txt") + "\n";
+		}
+
+		return arquivosMinerados;
+	}
+
+	@FXML
+	protected void voltarTela(ActionEvent event) throws IOException {
+		mainApp.telaInicial();
 	}
 
 }

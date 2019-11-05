@@ -1,7 +1,6 @@
 package model;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -43,8 +42,6 @@ public class DataSet {
 					if(noticia.contains("Atendimento: "))
 						break;
 					
-//					System.out.println(noticia);
-					
 					// Mining the text
 					text = tm.setMethodsMining(noticia);
 					
@@ -53,8 +50,6 @@ public class DataSet {
 							!text.equals(" ") &&
 							!text.equals("\n"))
 						list.add(text);
-					
-//					System.out.println(text + "\n");
 				}
 			}
 
