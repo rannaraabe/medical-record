@@ -20,7 +20,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("MT-MR");
-	    
+		this.primaryStage.setResizable(false);
+		
 		telaInicial();
 	}
 
