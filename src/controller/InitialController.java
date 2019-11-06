@@ -41,20 +41,18 @@ public class InitialController implements Initializable {
 		this.mainApp = mainApp;
 	}
 
-	/////////////////////// Métodos ////////////////////////
+	/////////////////////// Metodos ////////////////////////
 	@FXML
 	protected void selecionarAjuda(ActionEvent event) {
-		// TODO open dialog com instruçoes de uso
 		Alert dialog = new Alert(AlertType.INFORMATION);
 		dialog.setTitle("Ajuda");
 		dialog.setHeaderText(null);
-		dialog.setContentText("Passo a passo de uso do sistema: \n >Selecione o botão 'Iniciar'"
-				+ "\n >Selecione o botão 'Selecionar prontuários' e escolha os prontuários desejados em .pdf (o sistema permite a escolha de no mínimo dois prontuários por vez)"
-				+ "\n >Clique no botão 'Selecionar métricas'"
-				+ "\n >Selecione as métricas desejadas para comparar os prontuários"
-				+ "\n >Se desejar, escolha os dados que queira para estarem nos resultados finais (por padrão, o sistema informa apenas qual o prontuário e a anamnese)"
-				+ "\n >Clique no botão 'Gerar resultados'"
-				+ "\n >Se desejar, exporte os resultados selecionando o botão 'Exportar Resultados'");
+		dialog.setContentText("Passo a passo de uso do sistema: \n >Ao iniciar o sistema, selecione o botao 'Selecionar prontuarios' e escolha os prontuarios desejados em .pdf (o sistema permite a escolha de no minimo dois prontuarios por vez)"
+				+ "\n >Voce pode escolher 'Selecionar metricas' ou 'Gerar Similaridade'"
+				+ "\n >Ao clicar no botao 'Selecionar metricas', selecione as metricas desejadas para comparar os prontuarios"
+				+ "\n >Clique no botao 'Gerar resultados'"
+				+ "\n >Se desejar, exporte os resultados selecionando o botao 'Exportar Resultados'"
+				+ "\n >Caso clique no botao 'Gerar Similaridade', serÃ¡ exibido um grafico com os resultados.");
 		dialog.show();
 	}
 
@@ -65,19 +63,16 @@ public class InitialController implements Initializable {
 
 	@FXML
 	protected void selecionarSobre(ActionEvent event) {
-		// TODO open dialog com resumo doq eh o projeto e criadora
 		Alert dialog = new Alert(AlertType.INFORMATION);
 		dialog.setTitle("Sobre");
 		dialog.setHeaderText(null);
 		dialog.setContentText(
-				"O sistema MT-MR é um sistema que integra IA com Medicina. O objetivo principal do sistema é ler dados de prontuários médicos uplados e compará-los entre si para detectar a semelhança entre os dignósticos, através de métricas selecionadas."
-				+ "\nDesenvolvido por Ranna Raabe®");
+				"O sistema MT-MR eh um sistema que integra IA com Medicina. O objetivo principal do sistema eh ler dados de prontuarios medicos uplados e compara-los entre si para detectar a semelhanca entre os diagnosticos, atraves de metricas selecionadas."
+				+ "\nDesenvolvido por Ranna Raabe");
 		dialog.show();
 	}
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
+	public void initialize(URL location, ResourceBundle resources) {		
 	}
 }

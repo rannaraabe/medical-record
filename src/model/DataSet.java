@@ -37,7 +37,7 @@ public class DataSet {
 				String noticia = dataset[dataset.length - 1];
 				cont++;
 				
-				// Salvo a partir da 12a linha até encontrar a String "Atendimento"
+				// Salvo a partir da 12a linha ate encontrar a String "Atendimento"
 				if(cont > 13 ) {
 					if(noticia.contains("Atendimento: "))
 						break;

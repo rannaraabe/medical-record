@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimilaridadeController">
+<AnchorPane maxHeight="700.0" maxWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimilaridadeController">
    <children>
-      <BarChart fx:id="bcGrafico" layoutX="20.0" layoutY="60.0" prefHeight="386.0" prefWidth="321.0">
+      <BarChart fx:id="bcGrafico" layoutX="20.0" layoutY="60.0" prefHeight="617.0" prefWidth="482.0">
          <xAxis>
             <CategoryAxis label="Algoritmos" side="BOTTOM" fx:id="xAlgoritmos" />
          </xAxis>
@@ -19,10 +19,10 @@
       </BarChart>
       <Button fx:id="btVoltar" layoutX="19.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarTela" text="←">
          <font>
-            <Font name="Century Gothic" size="12.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <BarChart fx:id="bcGrafico2" layoutX="350.0" layoutY="57.0" prefHeight="386.0" prefWidth="321.0">
+      <BarChart fx:id="bcGrafico2" layoutX="529.0" layoutY="60.0" prefHeight="617.0" prefWidth="443.0">
          <xAxis>
             <CategoryAxis label="Algoritmos" side="BOTTOM" fx:id="xAlgoritmo" />
          </xAxis>

@@ -82,7 +82,7 @@ public class AlgoritmosController implements Initializable {
 		this.quantidadeArquivos = quantidadeArquivos;
 	}
 
-	/////////////////////// Métodos ////////////////////////
+	/////////////////////// Metodos ////////////////////////
 	@FXML
 	protected void verResultados(ActionEvent event) throws IOException {
 		// Imprimo o resultado da matriz com o algoritmo selecionado
@@ -110,9 +110,9 @@ public class AlgoritmosController implements Initializable {
 		na.generateFile(taResultados.getText(), index);
 		index++;
 
-		// Exibo um dialog apenas para informar ao usuário
+		// Exibo um dialog apenas para informar ao usuario
 		Alert dialog = new Alert(AlertType.CONFIRMATION);
-		dialog.setTitle("Exportação completa!");
+		dialog.setTitle("Exportacao completa!");
 		dialog.setHeaderText(null);
 		dialog.setContentText("Dados exportados com sucesso! Confira na pasta '\\dataset\\resultados\\'.");
 		dialog.show();

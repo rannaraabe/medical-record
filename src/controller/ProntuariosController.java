@@ -71,7 +71,7 @@ public class ProntuariosController {
 		ProntuariosController.quantidade = quantidade;
 	}
 
-	/////////////////////// Métodos ////////////////////////
+	/////////////////////// Metodos ////////////////////////
 	@FXML
 	protected void selecionarProntuarios(ActionEvent event) throws InterruptedException, IOException {
 		FileChooser chooser = new FileChooser();
@@ -86,7 +86,7 @@ public class ProntuariosController {
 
 				dialog.setTitle("Error");
 				dialog.setHeaderText(null);
-				dialog.setContentText("É necessário selecionar no mínimo dois arquivos.");
+				dialog.setContentText("Eh necessario selecionar no minimo dois arquivos.");
 				dialog.show();
 			}
 		} while (files.size() == 1);
@@ -110,7 +110,7 @@ public class ProntuariosController {
 			Alert dialog = new Alert(AlertType.ERROR);
 			dialog.setTitle("Error");
 			dialog.setHeaderText(null);
-			dialog.setContentText("É necessário selecionar arquivos para prosseguir.");
+			dialog.setContentText("Eh necessario selecionar arquivos para prosseguir.");
 			dialog.show();
 		} else {
 			mainApp.telaAlgoritmos();
@@ -123,13 +123,13 @@ public class ProntuariosController {
 			Alert dialog = new Alert(AlertType.ERROR);
 			dialog.setTitle("Error");
 			dialog.setHeaderText(null);
-			dialog.setContentText("Só é possível selecionar 2 (dois) arquivos.");
+			dialog.setContentText("Eh possivel selecionar apenas 2 (dois) arquivos.");
 			dialog.show();
 		} else if (getQuantidade() == 0) {
 			Alert dialog = new Alert(AlertType.ERROR);
 			dialog.setTitle("Error");
 			dialog.setHeaderText(null);
-			dialog.setContentText("É necessário selecionar 2 (dois) arquivos para prosseguir.");
+			dialog.setContentText("Eh necessario selecionar 2 (dois) arquivos para prosseguir.");
 			dialog.show();
 		} else {
 			mainApp.telaSimilaridade();

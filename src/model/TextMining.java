@@ -53,11 +53,11 @@ public class TextMining {
 	 * @return text without accents words
 	 */
 	public String removeAccent(String text) {
-		text = text.replaceAll("[бавгд]", "a");
-		text = text.replaceAll("[йикл]", "e");
-		text = text.replaceAll("[нмоп]", "i");
-		text = text.replaceAll("[утфхц]", "o");
-		text = text.replaceAll("[ъщыь]", "u");
+		text = text.replaceAll("[пїЅпїЅпїЅпїЅпїЅ]", "a");
+		text = text.replaceAll("[пїЅпїЅпїЅпїЅ]", "e");
+		text = text.replaceAll("[пїЅпїЅпїЅпїЅ]", "i");
+		text = text.replaceAll("[пїЅпїЅпїЅпїЅпїЅ]", "o");
+		text = text.replaceAll("[пїЅпїЅпїЅпїЅ]", "u");
 
 		return text;
 	}
@@ -69,7 +69,7 @@ public class TextMining {
 	 * @return text without special characters
 	 */
 	public String removeSpecialCharacters(String text) {
-		//text = text.replaceAll("[.,;“”:?!/\"#%@&$*()-]1234567890", "");
+		//text = text.replaceAll("[.,;пїЅпїЅ:?!/\"#%@&$*()-]1234567890", "");
 		text = text.replaceAll("[^\\p{Alpha} ]", "");
 
 		return text;
