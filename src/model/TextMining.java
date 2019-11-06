@@ -53,11 +53,7 @@ public class TextMining {
 	 * @return text without accents words
 	 */
 	public String removeAccent(String text) {
-		text = text.replaceAll("[�����]", "a");
-		text = text.replaceAll("[����]", "e");
-		text = text.replaceAll("[����]", "i");
-		text = text.replaceAll("[�����]", "o");
-		text = text.replaceAll("[����]", "u");
+		text = text.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
 
 		return text;
 	}
