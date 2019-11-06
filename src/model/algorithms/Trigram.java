@@ -1,6 +1,8 @@
 package model.algorithms;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Class contains the method Trigram metric
@@ -33,18 +35,13 @@ public class Trigram implements CompareStrings {
 				trigB.add(textB.substring(i, i + 3));
 		}
 
-		// Printando pra teste
-//		System.out.println(trigA);
-//		System.out.println(trigB);
-
 		// Comparing
 		int count = 0;
 		double calc;
-		
-		ArrayList<String> menor = trigA.size() < trigB.size() ? trigA : trigB;
+		Set<String> set = new HashSet<String>(trigB);
 
-		for (int i = 0; i < menor.size(); i++) {
-				if (trigA.get(i).equals(trigB.get(i)))
+		for (int i = 0; i < trigA.size(); i++) {
+				if (set.contains(trigA.get(i)))
 					count++;
 				else
 					continue;
@@ -52,7 +49,6 @@ public class Trigram implements CompareStrings {
 
 		// Calculating the number of unique tri-grams
 		calc = ((trigA.size() - count) + (trigB.size() - count)) + count;
-	
 		// Return percentage
 		return (count / calc)*100;
 	}
