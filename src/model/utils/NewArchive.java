@@ -18,7 +18,7 @@ public class NewArchive {
 	 * @throws FileNotFoundException 
 	 */
 	public void generateFile(String conteudo, int cod) throws FileNotFoundException {	
-		PrintWriter pw = new PrintWriter(".\\dataset\\resultados\\resultadoAnamnese" + cod + ".txt");
+		PrintWriter pw = new PrintWriter(".\\dataset\\resultados\\anamnese_resultado" + cod + ".txt");
 		pw.print(conteudo);
 		pw.close();
 	}
