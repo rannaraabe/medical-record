@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="500.0" maxWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialController">
+   <children>
+      <ImageView fx:id="imgElements" fitHeight="547.0" fitWidth="545.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/vector.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="316.0" layoutY="271.0" text="MT - MEDICINAL RECORD" textFill="#ee725c">
+         <font>
+            <Font name="Century Gothic" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgDoctor" fitHeight="170.0" fitWidth="202.0" layoutX="371.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/doctor.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btIniciar" layoutX="369.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarIniciar" text="Iniciar">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
+      <Button fx:id="btAjuda" layoutX="491.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarAjuda" text="Ajuda">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></Button>
+      <Label layoutX="327.0" layoutY="301.0" text="A plataforma que integra Medicina e IA!" textFill="#133a5b">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btSobre" layoutX="431.0" layoutY="349.0" mnemonicParsing="false" onAction="#selecionarSobre" text="Sobre">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

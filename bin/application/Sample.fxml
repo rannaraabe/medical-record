@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="535.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SampleController">
+   <children>
+      <CheckBox fx:id="cbCosine" layoutX="15.0" layoutY="318.0" mnemonicParsing="false" text="Cosine" />
+      <CheckBox fx:id="cbTrigram" layoutX="15.0" layoutY="344.0" mnemonicParsing="false" text="Trigram" />
+      <CheckBox fx:id="cbJaroWinkler" layoutX="15.0" layoutY="371.0" mnemonicParsing="false" text="JaroWinkler" />
+      <CheckBox fx:id="cbLevenshtein" layoutX="15.0" layoutY="398.0" mnemonicParsing="false" text="Levenshtein" />
+      <Button fx:id="btResultado" layoutX="190.0" layoutY="429.0" mnemonicParsing="false" onAction="#gerarResultado" text="Resultado" />
+      <Label fx:id="lbSelecionarAlgoritmos" layoutX="15.0" layoutY="292.0" text="Selecionar algoritmos:" />
+      <TextArea fx:id="taResultado" layoutX="359.0" layoutY="13.0" prefHeight="222.0" prefWidth="353.0" promptText="                                        ## Resultado ##" />
+      <Button fx:id="btSelecionarArquivo" layoutX="63.0" layoutY="429.0" mnemonicParsing="false" onAction="#selecionarArquivo" text="Selecionar arquivo" />
+      <TextArea fx:id="taPathArquivo" layoutX="15.0" layoutY="467.0" prefHeight="25.0" prefWidth="291.0" promptText="Caminho do arquivo selecionado" />
+      <LineChart fx:id="lcGrafico" layoutX="348.0" layoutY="240.0" prefHeight="290.0" prefWidth="360.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="77.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="18.0" layoutY="189.0" text="Instrucões:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
