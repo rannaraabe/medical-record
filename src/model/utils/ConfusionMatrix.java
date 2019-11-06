@@ -63,7 +63,7 @@ public class ConfusionMatrix {
 					matriz += "----------" + "        ";
 				else {
 					if (met == "levenshtein")
-						matriz += df.format((int) matrix[i][j]) + "         ";
+						matriz += df.format((int)matrix[i][j]) + "         ";
 					else
 						matriz += df.format(matrix[i][j]) + "%        ";
 				}

@@ -27,6 +27,9 @@ public class AlgoritmosController implements Initializable {
 
 	@FXML
 	private Button btResultado;
+	
+	@FXML
+	private Button btHome;
 
 	@FXML
 	private Label lbSelecionarAlgoritmos;
@@ -122,6 +125,11 @@ public class AlgoritmosController implements Initializable {
 	protected void voltarTela(ActionEvent event) throws IOException {
 		mainApp.telaProntuarios();
 	}
+	
+	@FXML
+    void voltarHome(ActionEvent event) throws IOException {
+		mainApp.telaInicial();
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

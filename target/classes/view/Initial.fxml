@@ -7,37 +7,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="758.0" maxWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialController">
+<AnchorPane maxHeight="758.0" maxWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialController">
    <children>
       <ImageView fx:id="imgElements" fitHeight="788.0" fitWidth="702.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vector.png" />
          </image>
       </ImageView>
-      <Label layoutX="500.0" layoutY="429.0" text="MT - MEDICINAL RECORD" textFill="#ee725c">
+      <Label layoutX="500.0" layoutY="391.0" text="MT - MEDICINAL RECORD" textFill="#ee725c">
          <font>
-            <Font name="Century Gothic" size="23.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgDoctor" fitHeight="252.0" fitWidth="290.0" layoutX="519.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgDoctor" fitHeight="252.0" fitWidth="290.0" layoutX="519.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/doctor.png" />
          </image>
       </ImageView>
-      <Button fx:id="btIniciar" layoutX="554.0" layoutY="508.0" mnemonicParsing="false" onAction="#selecionarIniciar" text="Iniciar">
+      <Button fx:id="btIniciar" layoutX="561.0" layoutY="470.0" mnemonicParsing="false" onAction="#selecionarIniciar" text="Iniciar">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button fx:id="btAjuda" layoutX="689.0" layoutY="508.0" mnemonicParsing="false" onAction="#selecionarAjuda" text="Ajuda">
+      <Button fx:id="btAjuda" layoutX="683.0" layoutY="470.0" mnemonicParsing="false" onAction="#selecionarAjuda" text="Ajuda">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Label layoutX="511.0" layoutY="459.0" text="A plataforma que integra Medicina e IA!" textFill="#133a5b">
+      <Label layoutX="511.0" layoutY="421.0" text="A plataforma que integra Medicina e IA!" textFill="#133a5b">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btSobre" layoutX="622.0" layoutY="508.0" mnemonicParsing="false" onAction="#selecionarSobre" text="Sobre">
+      <Button fx:id="btSobre" layoutX="622.0" layoutY="470.0" mnemonicParsing="false" onAction="#selecionarSobre" text="Sobre">
          <font>
             <Font size="14.0" />
          </font>

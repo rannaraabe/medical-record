@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="700.0" maxWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimilaridadeController">
+<AnchorPane maxHeight="700.0" maxWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimilaridadeController">
    <children>
       <BarChart fx:id="bcGrafico" layoutX="20.0" layoutY="60.0" prefHeight="617.0" prefWidth="482.0">
          <xAxis>
@@ -30,5 +30,10 @@
             <NumberAxis fx:id="yPalavra" label="Quantidade de palavras" side="LEFT" />
          </yAxis>
       </BarChart>
+      <Button fx:id="btHome" layoutX="946.0" layoutY="18.0" mnemonicParsing="false" onAction="#voltarHome" text="🏠">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

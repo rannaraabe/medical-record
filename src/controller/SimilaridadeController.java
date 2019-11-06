@@ -22,6 +22,9 @@ public class SimilaridadeController implements Initializable {
 
 	@FXML
 	private Button btVoltar;
+	
+	@FXML
+	private Button btHome;
 
 	@FXML
 	private BarChart<String, Number> bcGrafico;
@@ -99,20 +102,25 @@ public class SimilaridadeController implements Initializable {
 		XYChart.Series<String, Number> jaro = new XYChart.Series<String, Number>();
 		jaro.setName("Jaro-Winkler");
 		jaro.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "jaro")));
-		this.bcGrafico.getData().add(jaro);		
+		this.bcGrafico.getData().add(jaro);
+	}
+
+	@FXML
+	void voltarHome(ActionEvent event) throws IOException {
+		mainApp.telaInicial();
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		setQuantidadeArquivos(ProntuariosController.getQuantidade());
 		setArquivos(ProntuariosController.getArquivos());
-				
+
 		try {
 			exibirGrafico();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
