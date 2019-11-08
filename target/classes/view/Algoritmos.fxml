@@ -37,10 +37,6 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TextArea fx:id="taResultados" layoutX="19.0" layoutY="384.0" prefHeight="250.0" prefWidth="961.0" promptText="Resultados" wrapText="true">
-         <font>
-            <Font size="13.0" />
-         </font></TextArea>
       <Button fx:id="btResultado" layoutX="410.0" layoutY="656.0" mnemonicParsing="false" onAction="#verResultados" text="Ver resultados">
          <font>
             <Font size="14.0" />
@@ -55,5 +51,9 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <TextArea fx:id="taResultados" layoutX="19.0" layoutY="384.0" prefHeight="250.0" prefWidth="961.0" promptText="Resultados" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>

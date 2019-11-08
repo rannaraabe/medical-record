@@ -27,7 +27,7 @@ public class AlgoritmosController implements Initializable {
 
 	@FXML
 	private Button btResultado;
-	
+
 	@FXML
 	private Button btHome;
 
@@ -51,9 +51,9 @@ public class AlgoritmosController implements Initializable {
 
 	@FXML
 	private Button btImportar;
-	
+
 	@FXML
-    private TextArea taProntuarios;
+	private TextArea taProntuarios;
 
 	private int quantidadeArquivos;
 	private int index = 1;
@@ -91,26 +91,28 @@ public class AlgoritmosController implements Initializable {
 		// Imprimo o resultado da matriz com o algoritmo selecionado
 		ConfusionMatrix cm = new ConfusionMatrix();
 		int qFiles = getQuantidadeArquivos();
-				
+
+		List<File> files = getArquivos();
+
 		if (cbCosine.isSelected())
-			taResultados.setText("Cosine: \n" + cm.printMatrix(qFiles, "cosine"));
+			taResultados.setText("Cosine: \n" + cm.printMatrix(qFiles, "cosine", files));
 
 		if (cbTrigram.isSelected())
-			taResultados.setText("Trigram: \n" + cm.printMatrix(qFiles, "trigram"));
+			taResultados.setText("Trigram: \n" + cm.printMatrix(qFiles, "trigram", files));
 
 		if (cbJaroWinkler.isSelected())
-			taResultados.setText("Jaro-Winkler: \n" + cm.printMatrix(qFiles, "jaro"));
+			taResultados.setText("Jaro-Winkler: \n" + cm.printMatrix(qFiles, "jaro", files));
 
 		if (cbLevenshtein.isSelected())
-			taResultados.setText("Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein"));
-		
+			taResultados.setText("Levenshtein: \n" + cm.printMatrix(qFiles, "levenshtein", files));
+
 	}
 
 	@FXML
 	protected void exportarResultados(ActionEvent event) throws FileNotFoundException {
 		// Gero um novo arquivo com os resultados minerados e a matriz
 		NewArchive na = new NewArchive();
-		na.generateFile(taResultados.getText(), index);
+		na.generateFile(taProntuarios.getText() + "\n" + taResultados.getText(), index);
 		index++;
 
 		// Exibo um dialog apenas para informar ao usuario
@@ -125,11 +127,11 @@ public class AlgoritmosController implements Initializable {
 	protected void voltarTela(ActionEvent event) throws IOException {
 		mainApp.telaProntuarios();
 	}
-	
+
 	@FXML
-    void voltarHome(ActionEvent event) throws IOException {
+	void voltarHome(ActionEvent event) throws IOException {
 		mainApp.telaInicial();
-    }
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -144,7 +146,7 @@ public class AlgoritmosController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		taProntuarios.setText(arquivosMinerados);
 	}
 }

@@ -22,7 +22,7 @@ public class SimilaridadeController implements Initializable {
 
 	@FXML
 	private Button btVoltar;
-	
+
 	@FXML
 	private Button btHome;
 
@@ -47,6 +47,7 @@ public class SimilaridadeController implements Initializable {
 	private Main mainApp;
 	private int quantidadeArquivos;
 	private List<File> arquivos;
+	private boolean exibir = false;
 
 	public List<File> getArquivos() {
 		return arquivos;
@@ -79,30 +80,37 @@ public class SimilaridadeController implements Initializable {
 
 	private void exibirGrafico() throws IOException {
 
-		bcGrafico.setTitle(getArquivos().get(0).getName() + " vs " + getArquivos().get(1).getName());
-		bcGrafico2.setTitle(getArquivos().get(0).getName() + " vs " + getArquivos().get(1).getName());
-		ConfusionMatrix cm = new ConfusionMatrix();
+		try {
+			Thread.sleep(60);
+			this.exibir = true;
+		} catch (InterruptedException ex) {
+		}
 
-		XYChart.Series<String, Number> cosine = new XYChart.Series<String, Number>();
-		cosine.setName("Cosine");
-		cosine.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "cosine")));
-		this.bcGrafico.getData().add(cosine);
+		if (this.exibir) {
+			bcGrafico.setTitle(getArquivos().get(0).getName() + " vs " + getArquivos().get(1).getName());
+			bcGrafico2.setTitle(getArquivos().get(0).getName() + " vs " + getArquivos().get(1).getName());
+			ConfusionMatrix cm = new ConfusionMatrix();
 
-		XYChart.Series<String, Number> levenshtein = new XYChart.Series<String, Number>();
-		levenshtein.setName("Levenshtein");
-		levenshtein.getData()
-				.add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "levenshtein")));
-		this.bcGrafico2.getData().add(levenshtein);
+			XYChart.Series<String, Number> cosine = new XYChart.Series<String, Number>();
+			cosine.setName("Cosine");
+			cosine.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "cosine")));
+			this.bcGrafico.getData().add(cosine);
 
-		XYChart.Series<String, Number> trigram = new XYChart.Series<String, Number>();
-		trigram.setName("Trigram");
-		trigram.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "trigram")));
-		this.bcGrafico.getData().add(trigram);
+			XYChart.Series<String, Number> levenshtein = new XYChart.Series<String, Number>();
+			levenshtein.setName("Levenshtein");
+			levenshtein.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "levenshtein")));
+			this.bcGrafico2.getData().add(levenshtein);
 
-		XYChart.Series<String, Number> jaro = new XYChart.Series<String, Number>();
-		jaro.setName("Jaro-Winkler");
-		jaro.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "jaro")));
-		this.bcGrafico.getData().add(jaro);
+			XYChart.Series<String, Number> trigram = new XYChart.Series<String, Number>();
+			trigram.setName("Trigram");
+			trigram.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "trigram")));
+			this.bcGrafico.getData().add(trigram);
+
+			XYChart.Series<String, Number> jaro = new XYChart.Series<String, Number>();
+			jaro.setName("Jaro-Winkler");
+			jaro.getData().add(new XYChart.Data<String, Number>("", cm.resultadoMatrix(getArquivos(), "jaro")));
+			this.bcGrafico.getData().add(jaro);
+		}
 	}
 
 	@FXML
@@ -114,13 +122,13 @@ public class SimilaridadeController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		setQuantidadeArquivos(ProntuariosController.getQuantidade());
 		setArquivos(ProntuariosController.getArquivos());
+		this.exibir = true;
 
 		try {
 			exibirGrafico();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
