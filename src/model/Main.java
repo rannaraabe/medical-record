@@ -2,7 +2,10 @@ package model;
 
 import java.io.IOException;
 
-import model.utils.ConfusionMatrix;
+import model.algorithms.Cosine;
+import model.algorithms.JaroWinkler;
+import model.algorithms.Levenshtein;
+import model.algorithms.Trigram;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -27,15 +30,27 @@ public class Main {
 		 * readerPDF.generateTxtFromPDF(".\\dataset\\617241\\anamnese.pdf", 14); } catch
 		 * (IOException e) { e.printStackTrace(); }
 		 */
+
+		Cosine c = new Cosine();
+		Trigram t = new Trigram();
+		Levenshtein l = new Levenshtein();
+		JaroWinkler j = new JaroWinkler();
 		
-		DataSet ds = new DataSet();
-		ConfusionMatrix cm = new ConfusionMatrix();
+		System.out.println("cosine: " + c.similarity(
+				"acianotico anictorico ano consciente egh eupneico exame g1p0 ig35sem6d liquido normocorado normohidratado orientado perda",
+				"36s4d ano consciente egb exame g1p0a0 liquido orientado paciente perda refere vigil"));
 		
-		ds.readerArchive("./dataset/output/pdf1.txt");
-		ds.readerArchive("./dataset/output/pdf2.txt");
-		ds.readerArchive("./dataset/output/pdf3.txt");
+		System.out.println("trigram: " + t.similarity(
+				"acianotico anictorico ano consciente egh eupneico exame g1p0 ig35sem6d liquido normocorado normohidratado orientado perda",
+				"36s4d ano consciente egb exame g1p0a0 liquido orientado paciente perda refere vigil"));
 		
-//		cm.printMatrix(3, "cosine");
+		System.out.println("levenshtein: " + l.similarity(
+				"acianotico anictorico ano consciente egh eupneico exame g1p0 ig35sem6d liquido normocorado normohidratado orientado perda",
+				"36s4d ano consciente egb exame g1p0a0 liquido orientado paciente perda refere vigil"));
+		
+		System.out.println("jaro winkler: " + j.similarity(
+				"acianotico anictorico ano consciente egh eupneico exame g1p0 ig35sem6d liquido normocorado normohidratado orientado perda",
+				"36s4d ano consciente egb exame g1p0a0 liquido orientado paciente perda refere vigil"));
 	}
 
 }

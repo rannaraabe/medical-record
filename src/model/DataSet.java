@@ -44,6 +44,7 @@ public class DataSet {
 
 					// Mining the text
 					text = tm.setMethodsMining(noticia);
+//					System.out.println(text);
 
 					// Adding the text mining in list
 					if (!text.equals("") && !text.equals(" ") && !text.equals("\n"))
@@ -118,13 +119,13 @@ public class DataSet {
 			}
 		}
 
-		System.out.println(text);
+//		System.out.println(text);
 		// Converting the list in string
 		String texto = "";
 		for (String palavra : list)
 			texto += palavra;
 
-		System.out.println(texto);
+//		System.out.println(texto);
 		return texto;
 	}
 

@@ -25,15 +25,15 @@ public class ConfusionMatrix {
 	 * @param qnt
 	 * @throws IOException
 	 */
-	public String printMatrix(int qnt, String met, List<File> nomeArquivos) throws IOException {		
+	public String printMatrix(int qnt, String met, List<File> nomeArquivos) throws IOException {
 		String[][] matrix;
-		matrix = new String[qnt][qnt];
+		matrix = new String[qnt+1][qnt+1];
 		String matriz = "";
-		
+
 		matrix = algoritmoSimilaridade(met, matrix, qnt, nomeArquivos);
 
-		for (int i = 0; i < qnt; i++) {
-			for (int j = 0; j < qnt; j++) {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
 				if (i >= 1 && j >= 1 && i == j)
 					matriz += "\t\t\t\t|\t";
 				else
@@ -46,7 +46,8 @@ public class ConfusionMatrix {
 		return matriz;
 	}
 
-	public String[][] algoritmoSimilaridade(String met, String[][] matrix, int qnt, List<File> nomeArquivos) throws IOException {
+	public String[][] algoritmoSimilaridade(String met, String[][] matrix, int qnt, List<File> nomeArquivos)
+			throws IOException {
 		Cosine cosine = new Cosine();
 		Trigram trigram = new Trigram();
 		JaroWinkler jaro = new JaroWinkler();
@@ -57,18 +58,16 @@ public class ConfusionMatrix {
 		String t1, t2;
 
 		// Colocando os nomes dos arquivos
-		for (int i = 0; i < qnt; i++) {
-			matrix[0][i] = nomeArquivos.get(i).getName() + "\t|\t";
-		}
-
-		for (int i = 1; i < qnt; i++) {
-			matrix[i][0] = nomeArquivos.get(i).getName() + "\t|\t";
+		matrix[0][0] = "\t\t\t\t|\t";
+		for (int i = 1; i < matrix.length; i++) {
+			matrix[0][i] = nomeArquivos.get(i-1).getName() + "\t|\t";
+			matrix[i][0] = nomeArquivos.get(i-1).getName() + "\t|\t";
 		}
 
 		DecimalFormat df = new DecimalFormat("0.00");
 		// Fazendo a similaridade de cada arquivo com cada arquivo
-		for (int i = 1; i < qnt; i++) {
-			for (int j = 1; j < qnt; j++) {
+		for (int i = 1; i < matrix.length; i++) {
+			for (int j = 1; j < matrix.length; j++) {
 
 				t1 = data.readerMining(".\\dataset\\output\\pdf_anamnese_teste" + i + ".txt");
 				t2 = data.readerMining(".\\dataset\\output\\pdf_anamnese_teste" + j + ".txt");
@@ -109,8 +108,8 @@ public class ConfusionMatrix {
 		t1 = data.readerMining(".\\dataset\\output\\pdf_anamneseAA.txt");
 		t2 = data.readerMining(".\\dataset\\output\\pdf_anamneseBB.txt");
 
-//		System.out.println(t1 + "\n\n");
-//		System.out.println(t2 + "\n\n");
+		// System.out.println(t1 + "\n\n");
+		// System.out.println(t2 + "\n\n");
 
 		if (met == "cosine")
 			value = cosine.similarity(t1, t2);
